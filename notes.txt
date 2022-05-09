@@ -1,0 +1,16 @@
+Ref: https://github.com/photonlines/Research-Lab-Website
+Source: https://github.com/phamd7/KIND-Lab-Website
+
+Pages
+    - Home 
+    - People
+    - Projects
+    - Get Engaged
+
+People Page
+    - name
+    - year
+    - major 
+    - Photo
+    - Website (LinkedIn profile, github, etc.)
+    - current position.
