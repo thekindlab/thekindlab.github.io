@@ -4,21 +4,21 @@
 Last Updated: May 2022
 
 Pages
-    * Home 
-    * People
-    * Projects
-    * Publications
-    - Get Engaged
+* Home 
+* People
+* Projects
+* Publications
+* Get Engaged
 
 People Page
-    * undergrad, grad, or alumni
-    * name
-    * year and major
-    * current position
-    * link to your linkedin profile
-    * a photo of yourself you're okay with being displayed
+* undergrad, grad, or alumni
+* name
+* year and major
+* current position
+* link to your linkedin profile
+* a photo of yourself you're okay with being displayed
 
------
+## Template
 
 Example site: [University of Illinois Energy Transport Research Lab](http://etrl.mechanical.illinois.edu/)
 
