@@ -1,9 +1,28 @@
 
-## Research Lab Website Design Template
+## KIND Lab Website Repository
 
-KIND Lab Website Repository (Last Updated: May 2022)
+Last Updated: May 2022
+
+Pages
+    * Home 
+    * People
+    * Projects
+    * Publications
+    - Get Engaged
+
+People Page
+    * undergrad, grad, or alumni
+    * name
+    * year and major
+    * current position
+    * link to your linkedin profile
+    * a photo of yourself you're okay with being displayed
+
+-----
 
 Example site: [University of Illinois Energy Transport Research Lab](http://etrl.mechanical.illinois.edu/)
+
+Template repository: https://github.com/photonlines/Research-Lab-Website
 
 Live view of Template: https://photonlines.github.io/Research-Lab-Website/
 
