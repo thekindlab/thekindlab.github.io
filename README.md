@@ -5,18 +5,18 @@ Last Updated: May 2022
 
 Pages
 * Home 
-* People
+* People 
 * Projects
 * Publications
 * Get Engaged
 
 People Page
-* undergrad, grad, or alumni
-* name
-* year and major
-* current position
-* link to your linkedin profile
-* a photo of yourself you're okay with being displayed
+* Undergrad, grad, or alumni
+* Name
+* Year and major
+* Current position
+* Link to your linkedin profile
+* A photo of yourself you're okay with being displayed
 
 ## Template
 
