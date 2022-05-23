@@ -14,3 +14,8 @@ People Page
     - Photo
     - Website (LinkedIn profile, github, etc.)
     - current position.
+
+Add vision to index
+add themes for lab colors
+combine projects and publications
+    - add placeholder text
