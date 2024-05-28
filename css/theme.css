@@ -359,6 +359,10 @@ body>.navbar .brand:hover {
 	margin-bottom: 20px;
 }
 
+.feature-item h4 {
+	font-weight: normal;
+}
+
 .feature-item p {
 	margin-left: 15px;
 	margin-right: 15px;
@@ -548,5 +552,5 @@ ul.sponsors {
 #footer p,
 #footer address {
 	color: #000000;
-	font-size: 11px;
+	font-size: 16px;
 }
