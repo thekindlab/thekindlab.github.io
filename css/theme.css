@@ -395,6 +395,12 @@ body>.navbar .brand:hover {
 	border-bottom: 1px solid #ddd;
 }
 
+.subtopic {
+	font-size: 13px;
+	text-align: left;
+	border-bottom: 1px solid #ddd;
+}
+
 .jumbotron {
 	position: relative;
 	padding: 45px 0px 35px 0px;
