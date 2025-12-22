@@ -1,0 +1,620 @@
+/* ==========================================================================
+   1. CSS VARIABLES & RESET
+   ========================================================================== */
+:root {
+    /* --- BRAND COLORS --- */
+    /* Deep Navy: Used for Headings, Footer background, and strong elements */
+    --primary-color: #1F3A5F; 
+    
+    /* Leaf Green: Used for Links, Buttons, and Highlights */
+    /* Adjusted to #6e9134 to pass WCAG AA accessibility standards on white */
+    --accent-color: #6e9134; 
+    
+    /* --- TEXT COLORS --- */
+    --text-color: #333333;         /* Dark Grey for body text (easier on eyes than black) */
+    --text-light: #555555;         /* Lighter grey for meta-data and secondary text */
+    
+    /* --- BACKGROUNDS --- */
+    --bg-color: #ffffff;           /* Main page background */
+    --bg-secondary: #F4F7F6;       /* Very subtle green-tinted grey for alternating sections */
+    
+    /* --- LAYOUT --- */
+    --nav-height: 90px;
+    --font-main: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* Default text selection color */
+::selection {
+    background: var(--accent-color);
+    color: #fff;
+}
+
+/* Basic Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--text-color);
+    line-height: 1.7;
+    background-color: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures footer stays at bottom even on short pages */
+    -webkit-font-smoothing: antialiased; /* Crisper text on Mac */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.2s ease;
+}
+
+ul {
+    list-style: none;
+}
+
+/* ==========================================================================
+   2. GLOBAL UTILITIES & LAYOUT
+   ========================================================================== */
+.container {
+    max-width: 1100px; /* Limits width for readability */
+    margin: 0 auto;    /* Centers the container */
+    padding: 0 40px;   /* Side gutters */
+    width: 100%;
+}
+
+section {
+    padding: 80px 0;
+}
+
+/* --- PAGE INTROS (Global) --- */
+/* This ensures the top section of EVERY page looks identical */
+#intro, 
+#publications-intro, 
+#projects-intro, 
+.people-group:first-of-type {
+    padding-top: 80px;
+    padding-bottom: 60px;
+    text-align: center;
+}
+
+/* Global Section Title Style */
+.section-title {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+/* Intro Paragraph Text */
+#intro p,
+#publications-intro p,
+#projects-intro p {
+    font-size: 1.25rem;
+    color: var(--text-light);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   3. NAVIGATION BAR
+   ========================================================================== */
+header {
+    height: var(--nav-height);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    padding: 0 40px;
+    position: sticky; /* Sticks to top when scrolling */
+    top: 0;
+    z-index: 1000;
+    border-top: 5px solid var(--accent-color); /* Green brand strip at top */
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.branding {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-img {
+    height: 50px;
+    width: auto;
+    display: block;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy hover */
+}
+
+.logo-img:hover {
+    transform: scale(1.15);
+}
+
+.logo-text {
+    font-weight: 600;
+    font-size: 1.4rem;
+    letter-spacing: -0.5px;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    line-height: 1;
+}
+
+.nav-links {
+    display: flex;
+    gap: 35px;
+}
+
+.nav-links a {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-color);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: inline-block; /* Required for transform to work */
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--accent-color);
+    transform: scale(1.1); /* Slight grow effect */
+}
+
+/* ==========================================================================
+   4. HOME PAGE SECTIONS
+   ========================================================================== */
+
+/* --- Mission & Vision Cards --- */
+#mission-vision {
+    background-color: var(--bg-secondary);
+    padding: 80px 0;
+}
+
+.mv-card {
+    background: #ffffff;
+    border-radius: 30px;
+    padding: 60px 40px;
+    max-width: 900px;
+    margin: 0 auto 40px auto;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.mv-card:last-child {
+    margin-bottom: 0;
+}
+
+.mv-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    font-weight: 800;
+}
+
+.mv-card p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-light);
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+/* --- Values (Zig-Zag Layout) --- */
+#values {
+    background-color: #fff;
+    padding: 100px 0;
+}
+
+.values-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.values-list {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.value-row {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+/* Reverses order for every even row (Image Left, Text Right) */
+.value-row:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.value-content {
+    flex: 1;
+}
+
+.value-content h4 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.value-visual {
+    flex: 1;
+    height: 300px;
+    background-color: #f3f4f6;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #cbd5e1;
+    font-weight: 600;
+}
+
+/* --- News Section --- */
+#news {
+    background-color: #f9f9f9;
+    padding: 60px 0;
+}
+
+.news-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.news-year {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    font-weight: 700;
+    margin: 40px 0 20px 0;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.news-item {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border-left: 5px solid var(--accent-color);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    transition: transform 0.2s;
+}
+
+.news-item:hover {
+    transform: translateX(5px);
+}
+
+.news-heading {
+    font-size: 1.05rem;
+    line-height: 1.5;
+    color: var(--text-color);
+    margin: 0;
+}
+
+.news-item a {
+    color: var(--primary-color);
+    font-weight: 600;
+    border-bottom: 1px dotted var(--primary-color);
+}
+
+.news-item a:hover {
+    color: var(--accent-color);
+    border-bottom: 1px solid var(--accent-color);
+}
+
+.news-badge {
+    display: inline-block;
+    background-color: #eee;
+    color: #555;
+    font-size: 0.75rem;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+/* ==========================================================================
+   5. PEOPLE PAGE
+   ========================================================================== */
+.people-group {
+    padding-bottom: 60px;
+}
+
+.people-header {
+    font-size: 1.5rem;
+    color: var(--text-light);
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 40px;
+    font-weight: 400;
+}
+
+.profile-img-container {
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 50%;
+    background-color: #eee;
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Faculty Layout */
+.faculty-card {
+    display: flex;
+    gap: 50px;
+    margin-bottom: 40px;
+    align-items: flex-start;
+}
+
+.profile-img-container.large {
+    width: 160px;
+    height: 160px;
+}
+
+.profile-name {
+    font-size: 1.4rem;
+    font-weight: 800;
+    margin-bottom: 5px;
+    color: var(--primary-color);
+}
+
+.profile-role {
+    font-size: 1rem;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+/* Student Grid */
+.student-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 60px;
+    row-gap: 50px;
+}
+
+.student-card {
+    display: flex;
+    gap: 25px;
+    align-items: flex-start;
+}
+
+.profile-img-container.small {
+    width: 110px;
+    height: 110px;
+}
+
+.student-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.student-name .degree {
+    font-weight: 400;
+    font-size: 0.85rem;
+    color: #888;
+    margin-left: 5px;
+}
+
+/* ==========================================================================
+   6. PUBLICATIONS PAGE
+   ========================================================================== */
+.year-heading {
+    font-size: 2rem;
+    color: #ccc;
+    border-bottom: 2px solid #eee;
+    margin-top: 60px;
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+
+/* Container for one publication entry */
+.pub-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+    border-bottom: 1px solid #eee;
+    gap: 30px;
+}
+
+/* Left side (Text) */
+.pub-details {
+    flex: 1;
+}
+
+.pub-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 8px;
+    line-height: 1.4;
+    display: block;
+}
+
+.pub-authors {
+    font-size: 1rem;
+    color: var(--text-color);
+    margin-bottom: 6px;
+}
+
+.pub-venue {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    font-style: italic;
+}
+
+.award-text {
+    color: #e67e22; /* Gold/Orange */
+    font-weight: 700;
+    margin-left: 10px;
+}
+
+/* Right side (Buttons) */
+.pub-buttons {
+    flex-shrink: 0;
+}
+
+.pub-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 0.8rem;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    text-align: center;
+    min-width: 140px;
+}
+
+.pub-btn:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.pub-btn.pdf {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.pub-btn.pdf:hover {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+/* ==========================================================================
+   7. FOOTER
+   ========================================================================== */
+footer {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    padding-top: 60px;
+    padding-bottom: 0;
+    font-size: 0.95rem;
+    margin-top: auto;
+    border-top: 5px solid var(--accent-color);
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+    padding-bottom: 50px;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-col h4 {
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.footer-col p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: #e0e0e0;
+}
+
+/* Footer Links with "Lift Up" Hover */
+.footer-links a {
+    display: block; /* Allows transform to work */
+    color: #fff;
+    margin-bottom: 12px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: var(--accent-color);
+    transform: translateY(-3px); /* Lifts up 3px */
+}
+
+.footer-bottom {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 20px 40px;
+    font-size: 0.85rem;
+    text-align: center;
+    color: #ccc;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+/* ==========================================================================
+   8. MOBILE RESPONSIVE
+   ========================================================================== */
+@media (max-width: 768px) {
+    /* --- Layout Adjustments --- */
+    header { padding: 0 20px; }
+    
+    /* Hide nav menu for now (requires JS toggle usually) */
+    .nav-links { display: none; } 
+    
+    .section-title { font-size: 2rem; }
+    
+    /* Stack Values Section */
+    .value-row, 
+    .value-row:nth-child(even) {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+    
+    /* Stack People Page */
+    .faculty-card { flex-direction: column; align-items: center; text-align: center; }
+    .student-grid { grid-template-columns: 1fr; }
+    .student-card { flex-direction: row; }
+    
+    /* Stack Publications */
+    .pub-item { flex-direction: column; align-items: flex-start; gap: 20px; }
+    .pub-buttons { width: 100%; }
+    .pub-btn { display: block; width: 100%; }
+
+    /* --- FOOTER CENTERED LAYOUT (Mobile Only) --- */
+    .footer-content {
+        flex-direction: column;
+        text-align: center; /* Centers all text */
+    }
+
+    .footer-col {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centers flex items (like the h4 border) */
+    }
+    
+    /* Center the icons and links specifically */
+    .footer-links a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
