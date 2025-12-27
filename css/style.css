@@ -1,41 +1,40 @@
 /* ==========================================================================
-   1. CSS VARIABLES & RESET
+   CSS VARIABLES & RESET
    ========================================================================== */
+
+/* Theme colors and global settings */
 :root {
-    /* --- BRAND COLORS --- */
-    /* Deep Navy: Used for Headings, Footer background, and strong elements */
-    --primary-color: #1F3A5F; 
+    /* Brand Colors */
+    --primary-color: #1F3A5F;      /* Deep navy for headings and footer */
+    --accent-color: #6e9134;       /* Leaf green for links and buttons (WCAG AA compliant) */
     
-    /* Leaf Green: Used for Links, Buttons, and Highlights */
-    /* Adjusted to #6e9134 to pass WCAG AA accessibility standards on white */
-    --accent-color: #6e9134; 
+    /* Text Colors */
+    --text-color: #333333;         /* Main body text */
+    --text-light: #555555;         /* Secondary text */
     
-    /* --- TEXT COLORS --- */
-    --text-color: #333333;         /* Dark Grey for body text (easier on eyes than black) */
-    --text-light: #555555;         /* Lighter grey for meta-data and secondary text */
-    
-    /* --- BACKGROUNDS --- */
+    /* Backgrounds */
     --bg-color: #ffffff;           /* Main page background */
-    --bg-secondary: #F4F7F6;       /* Very subtle green-tinted grey for alternating sections */
+    --bg-secondary: #F4F7F6;       /* Subtle tinted grey for alternating sections */
     
-    /* --- LAYOUT --- */
+    /* Layout */
     --nav-height: 90px;
     --font-main: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
 }
 
-/* Default text selection color */
+/* Custom text selection highlight color */
 ::selection {
     background: var(--accent-color);
     color: #fff;
 }
 
-/* Basic Reset */
+/* Remove default margins, paddings, and ensure consistent box-sizing */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+/* Base body styles - sticky footer layout */
 body {
     font-family: var(--font-main);
     color: var(--text-color);
@@ -43,36 +42,40 @@ body {
     background-color: var(--bg-color);
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Ensures footer stays at bottom even on short pages */
-    -webkit-font-smoothing: antialiased; /* Crisper text on Mac */
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
 }
 
+/* Remove default link styling, add smooth transitions */
 a {
     text-decoration: none;
     color: inherit;
     transition: all 0.2s ease;
 }
 
+/* Remove default list bullets */
 ul {
     list-style: none;
 }
 
 /* ==========================================================================
-   2. GLOBAL UTILITIES & LAYOUT
+   GLOBAL UTILITIES & LAYOUT
    ========================================================================== */
+
+/* Centered container with max-width for readability */
 .container {
-    max-width: 1100px; /* Limits width for readability */
-    margin: 0 auto;    /* Centers the container */
-    padding: 0 40px;   /* Side gutters */
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px;
     width: 100%;
 }
 
+/* Default vertical spacing for sections */
 section {
     padding: 80px 0;
 }
 
-/* --- PAGE INTROS (Global) --- */
-/* This ensures the top section of EVERY page looks identical */
+/* Consistent intro section styling across all pages */
 #intro, 
 #publications-intro, 
 #projects-intro, 
@@ -82,7 +85,7 @@ section {
     text-align: center;
 }
 
-/* Global Section Title Style */
+/* Main heading style for page sections */
 .section-title {
     font-size: 2.5rem;
     color: var(--primary-color);
@@ -91,7 +94,7 @@ section {
     line-height: 1.2;
 }
 
-/* Intro Paragraph Text */
+/* Intro paragraph text styling */
 #intro p,
 #publications-intro p,
 #projects-intro p {
@@ -102,8 +105,10 @@ section {
 }
 
 /* ==========================================================================
-   3. NAVIGATION BAR
+   NAVIGATION BAR
    ========================================================================== */
+
+/* Sticky header that remains at top when scrolling */
 header {
     height: var(--nav-height);
     display: flex;
@@ -111,30 +116,33 @@ header {
     justify-content: space-between;
     background: #fff;
     padding: 0 40px;
-    position: sticky; /* Sticks to top when scrolling */
+    position: sticky;
     top: 0;
     z-index: 1000;
-    border-top: 5px solid var(--accent-color); /* Green brand strip at top */
+    border-top: 5px solid var(--accent-color);
     border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 
+/* Logo and title container */
 .branding {
     display: flex;
     align-items: center;
     gap: 15px;
 }
 
+/* Logo image with bounce hover effect */
 .logo-img {
     height: 50px;
     width: auto;
     display: block;
-    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy hover */
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .logo-img:hover {
     transform: scale(1.15);
 }
 
+/* Site title next to logo */
 .logo-text {
     font-weight: 600;
     font-size: 1.4rem;
@@ -144,37 +152,79 @@ header {
     line-height: 1;
 }
 
+/* Horizontal navigation menu */
 .nav-links {
     display: flex;
     gap: 35px;
 }
 
+/* Navigation link styling with grow effect */
 .nav-links a {
     font-size: 0.9rem;
     font-weight: 600;
     color: var(--text-color);
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    display: inline-block; /* Required for transform to work */
+    display: inline-block;
     transition: transform 0.2s ease, color 0.2s ease;
 }
 
+/* Active and hover states */
 .nav-links a:hover,
 .nav-links a.active {
     color: var(--accent-color);
-    transform: scale(1.1); /* Slight grow effect */
+    transform: scale(1.1);
 }
 
+/* Dropdown menu container */
+.dropdown {
+    position: relative;
+}
+
+/* Hidden dropdown menu that appears on hover */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    min-width: 200px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Dropdown link styling */
+.dropdown-menu li a {
+    display: block;
+    padding: 12px 20px;
+    color: #333;
+    text-decoration: none;
+}
+
+.dropdown-menu li a:hover {
+    background: #f5f5f5;
+}
+
+
 /* ==========================================================================
-   4. HOME PAGE SECTIONS
+   HOME PAGE SECTIONS
    ========================================================================== */
 
-/* --- Mission & Vision Cards --- */
+/* Mission & Vision section with alternate background */
 #mission-vision {
     background-color: var(--bg-secondary);
     padding: 80px 0;
 }
 
+/* White card container for mission/vision content */
 .mv-card {
     background: #ffffff;
     border-radius: 30px;
@@ -204,7 +254,7 @@ header {
     margin: 0 auto;
 }
 
-/* --- Values (Zig-Zag Layout) --- */
+/* Values section with alternating image/text layout */
 #values {
     background-color: #fff;
     padding: 100px 0;
@@ -223,17 +273,19 @@ header {
     margin: 0 auto;
 }
 
+/* Each value row with image and text side-by-side */
 .value-row {
     display: flex;
     align-items: center;
     gap: 60px;
 }
 
-/* Reverses order for every even row (Image Left, Text Right) */
+/* Alternates image position for visual interest */
 .value-row:nth-child(even) {
     flex-direction: row-reverse;
 }
 
+/* Text content container */
 .value-content {
     flex: 1;
 }
@@ -245,6 +297,7 @@ header {
     font-weight: 700;
 }
 
+/* Placeholder for icons/images */
 .value-visual {
     flex: 1;
     height: 300px;
@@ -257,7 +310,7 @@ header {
     font-weight: 600;
 }
 
-/* --- News Section --- */
+/* News section layout */
 #news {
     background-color: #f9f9f9;
     padding: 60px 0;
@@ -268,6 +321,7 @@ header {
     margin: 0 auto;
 }
 
+/* Year dividers */
 .news-year {
     font-size: 1.8rem;
     color: var(--primary-color);
@@ -277,6 +331,7 @@ header {
     padding-bottom: 10px;
 }
 
+/* Individual news item card */
 .news-item {
     background: #fff;
     padding: 20px;
@@ -287,6 +342,7 @@ header {
     transition: transform 0.2s;
 }
 
+/* Slide effect on hover */
 .news-item:hover {
     transform: translateX(5px);
 }
@@ -298,6 +354,7 @@ header {
     margin: 0;
 }
 
+/* Links within news items */
 .news-item a {
     color: var(--primary-color);
     font-weight: 600;
@@ -309,6 +366,7 @@ header {
     border-bottom: 1px solid var(--accent-color);
 }
 
+/* Category badge (e.g., "Award", "Grant") */
 .news-badge {
     display: inline-block;
     background-color: #eee;
@@ -322,12 +380,15 @@ header {
 }
 
 /* ==========================================================================
-   5. PEOPLE PAGE
+   PEOPLE PAGE
    ========================================================================== */
+
+/* Section grouping (faculty, students, alumni) */
 .people-group {
-    padding-bottom: 60px;
+    padding-bottom: 6px;
 }
 
+/* Section headers (e.g., "Faculty", "Current Students") */
 .people-header {
     font-size: 1.5rem;
     color: var(--text-light);
@@ -337,6 +398,7 @@ header {
     font-weight: 400;
 }
 
+/* Circular profile image container */
 .profile-img-container {
     flex-shrink: 0;
     overflow: hidden;
@@ -350,7 +412,7 @@ header {
     object-fit: cover;
 }
 
-/* Faculty Layout */
+/* Faculty member card layout */
 .faculty-card {
     display: flex;
     gap: 50px;
@@ -358,6 +420,7 @@ header {
     align-items: flex-start;
 }
 
+/* Large profile image for faculty */
 .profile-img-container.large {
     width: 160px;
     height: 160px;
@@ -376,7 +439,7 @@ header {
     margin-bottom: 20px;
 }
 
-/* Student Grid */
+/* Two-column grid for students */
 .student-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -384,12 +447,14 @@ header {
     row-gap: 50px;
 }
 
+/* Student card with image and info */
 .student-card {
     display: flex;
     gap: 25px;
     align-items: flex-start;
 }
 
+/* Smaller profile image for students */
 .profile-img-container.small {
     width: 110px;
     height: 110px;
@@ -402,6 +467,7 @@ header {
     color: var(--primary-color);
 }
 
+/* Degree designation (e.g., "BS CS", "PhD") */
 .student-name .degree {
     font-weight: 400;
     font-size: 0.85rem;
@@ -410,8 +476,10 @@ header {
 }
 
 /* ==========================================================================
-   6. PUBLICATIONS PAGE
+   PUBLICATIONS PAGE
    ========================================================================== */
+
+/* Year divider headers */
 .year-heading {
     font-size: 2rem;
     color: #ccc;
@@ -421,7 +489,7 @@ header {
     font-weight: 800;
 }
 
-/* Container for one publication entry */
+/* Individual publication entry */
 .pub-item {
     display: flex;
     justify-content: space-between;
@@ -431,11 +499,12 @@ header {
     gap: 30px;
 }
 
-/* Left side (Text) */
+/* Publication text content */
 .pub-details {
     flex: 1;
 }
 
+/* Publication title */
 .pub-title {
     font-size: 1.1rem;
     font-weight: 700;
@@ -445,39 +514,39 @@ header {
     display: block;
 }
 
+/* Author names */
 .pub-authors {
     font-size: 1rem;
     color: var(--text-color);
     margin-bottom: 6px;
 }
 
+/* Conference/venue information */
 .pub-venue {
     font-size: 0.9rem;
     color: var(--text-light);
     font-style: italic;
 }
 
+/* Special award designation */
 .award-text {
-    color: #e67e22; /* Gold/Orange */
+    color: #e67e22;
     font-weight: 700;
     margin-left: 10px;
 }
 
-/* Right side (Buttons) */
+/* Button container */
 .pub-buttons {
     flex-shrink: 0;
 }
 
-/* UNIFIED BUTTON STYLE */
+/* Consistent button styling across site */
 .pub-btn {
     display: inline-block;
     padding: 10px 20px;
-    
-    /* Standard Solid Blue Look */
     background-color: var(--primary-color);
     color: #fff;
     border: 2px solid var(--primary-color);
-    
     font-weight: 600;
     font-size: 0.8rem;
     border-radius: 6px;
@@ -486,11 +555,12 @@ header {
     transition: all 0.2s ease;
     white-space: nowrap;
     text-align: center;
-    min-width: 140px; /* Uniform width */
+    min-width: 140px;
 }
 
+/* Lift effect with color change on hover */
 .pub-btn:hover {
-    background-color: var(--accent-color); /* Green on hover */
+    background-color: var(--accent-color);
     border-color: var(--accent-color);
     color: #fff;
     transform: translateY(-2px);
@@ -498,8 +568,10 @@ header {
 }
 
 /* ==========================================================================
-   7. FOOTER
+   FOOTER
    ========================================================================== */
+
+/* Dark footer with brand accent */
 footer {
     background-color: var(--primary-color);
     color: #ffffff;
@@ -510,6 +582,7 @@ footer {
     border-top: 5px solid var(--accent-color);
 }
 
+/* Three-column footer layout */
 .footer-content {
     display: flex;
     flex-wrap: wrap;
@@ -518,11 +591,13 @@ footer {
     padding-bottom: 50px;
 }
 
+/* Individual footer column */
 .footer-col {
     flex: 1;
     min-width: 250px;
 }
 
+/* Footer column headings */
 .footer-col h4 {
     color: #fff;
     font-size: 1.1rem;
@@ -541,9 +616,9 @@ footer {
     color: #e0e0e0;
 }
 
-/* Footer Links with "Lift Up" Hover */
+/* Footer links with lift hover effect */
 .footer-links a {
-    display: block; /* Allows transform to work */
+    display: block;
     color: #fff;
     margin-bottom: 12px;
     text-decoration: none;
@@ -553,9 +628,10 @@ footer {
 
 .footer-links a:hover {
     color: var(--accent-color);
-    transform: translateY(-3px); /* Lifts up 3px */
+    transform: translateY(-3px);
 }
 
+/* Copyright bar at bottom */
 .footer-bottom {
     background-color: rgba(0, 0, 0, 0.2);
     padding: 20px 40px;
@@ -566,18 +642,79 @@ footer {
 }
 
 /* ==========================================================================
-   8. MOBILE RESPONSIVE
+   MOBILE RESPONSIVE
    ========================================================================== */
+
+/* Styles for tablets and mobile devices */
 @media (max-width: 768px) {
-    /* --- Layout Adjustments --- */
-    header { padding: 0 20px; }
+    /* Vertical stacked navigation for mobile */
+    header { 
+        position: relative;
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+        gap: 20px;
+    }
     
-    /* Hide nav menu for now (requires JS toggle usually) */
-    .nav-links { display: none; } 
+    .branding {
+        width: 100%;
+        justify-content: center;
+    }
     
-    .section-title { font-size: 2rem; }
+    .logo-text {
+        font-size: 1.2rem;
+    }
     
-    /* Stack Values Section */
+    /* Vertical navigation menu items */
+    .nav-links { 
+        flex-direction: column;
+        gap: 0;
+        width: 100%;
+    }
+    
+    .nav-links > li {
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+    
+    .nav-links > li:last-child {
+        border-bottom: none;
+    }
+    
+    .nav-links > li > a {
+        display: block;
+        padding: 15px 20px;
+        text-align: center;
+        font-size: 0.85rem;
+    }
+    
+    /* Dropdown menu - full width on mobile */
+    .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        background: #f9f9f9;
+        min-width: 100%;
+    }
+    
+    .dropdown-menu li {
+        border-bottom: 1px solid rgba(0,0,0,0.03);
+    }
+    
+    .dropdown-menu li:last-child {
+        border-bottom: none;
+    }
+    
+    .dropdown-menu li a {
+        padding: 12px 20px;
+        font-size: 0.8rem;
+        text-align: center;
+    }
+    
+    /* Reduce heading sizes for mobile */
+    .section-title { 
+        font-size: 2rem; 
+    }
+    
+    /* Stack value rows vertically */
     .value-row, 
     .value-row:nth-child(even) {
         flex-direction: column;
@@ -585,32 +722,71 @@ footer {
         gap: 30px;
     }
     
-    /* Stack People Page */
-    .faculty-card { flex-direction: column; align-items: center; text-align: center; }
-    .student-grid { grid-template-columns: 1fr; }
-    .student-card { flex-direction: row; }
+    /* Center faculty cards on mobile */
+    .faculty-card { 
+        flex-direction: column; 
+        align-items: center; 
+        text-align: center; 
+    }
     
-    /* Stack Publications */
-    .pub-item { flex-direction: column; align-items: flex-start; gap: 20px; }
-    .pub-buttons { width: 100%; }
-    .pub-btn { display: block; width: 100%; }
-
-    /* --- FOOTER CENTERED LAYOUT (Mobile Only) --- */
+    /* Single column student grid */
+    .student-grid { 
+        grid-template-columns: 1fr; 
+    }
+    
+    /* Center student cards */
+    .student-card { 
+        flex-direction: column; 
+        align-items: center; 
+        text-align: center; 
+    }
+    
+    /* Stack publication items vertically */
+    .pub-item { 
+        flex-direction: column; 
+        align-items: flex-start; 
+        gap: 20px; 
+    }
+    
+    /* Full width buttons on mobile */
+    .pub-buttons { 
+        width: 100%; 
+    }
+    
+    .pub-btn { 
+        display: block; 
+        width: 100%; 
+    }
+    
+    /* Center footer content */
     .footer-content {
         flex-direction: column;
-        text-align: center; /* Centers all text */
-    }
-
-    .footer-col {
-        display: flex;
-        flex-direction: column;
-        align-items: center; /* Centers flex items (like the h4 border) */
+        gap: 30px;
+        text-align: center;
     }
     
-    /* Center the icons and links specifically */
-    .footer-links a {
+    .footer-col {
+        min-width: 100%;
+    }
+    
+    .footer-col h4 {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .footer-links {
         display: flex;
-        justify-content: center;
+        flex-direction: column;
         align-items: center;
+    }
+    
+    .footer-links a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .footer-bottom {
+        padding: 20px;
     }
 }

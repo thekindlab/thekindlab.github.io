@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
     <link rel="icon" type="image/png" href="images/kindLogos/favicon_32x32.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -12,31 +13,59 @@
     <header>
         <div class="branding">
             <a href="index.html" class="logo-link">
-            <img src="images/kindLogos/KIND_SYMBOL-tiny-transparent-.png" alt="Lab Logo" class="logo-img">
+                <img src="images/kindLogos/KIND_SYMBOL-tiny-transparent-.png" alt="Lab Logo" class="logo-img">
             </a>
             <span class="logo-text">THE KIND LAB</span>
         </div>
         <nav>
             <ul class="nav-links">
                 <li><a href="index.html">About</a></li>
+                <li><a href="news.html">News</a></li>
                 <li><a href="people.html">People</a></li>
-                <li><a href="publications.html">Publications</a></li>
-                <li><a href="projects.html">Current Projects</a></li>
-                <li><a href="contact.html"class="active">Contact Us</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Research</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="publications.html">Publications</a></li>
+                        <li><a href="projects.html">Current Projects</a></li>
+                    </ul>
+                </li>
+                <li><a href="contact.html" class="active">Contact Us</a></li>
             </ul>
         </nav>
     </header>
 
-    <main class="container">
-        
-       
+    <main>
+        <section id="intro">
+            <div class="container">
+                <h1 class="section-title" style="border:none; padding:0;">Get In Touch</h1>
+                <p>Interested in collaborating, joining the lab, or learning more about our work? We'd love to hear from you.</p>
+            </div>
+        </section>
 
+        <section id="contact-content" style="background-color: var(--bg-secondary); padding: 80px 0;">
+            <div class="container">
+                <div class="mv-card">
+                    <div style="margin-bottom: 25px;">
+                        <i class="fas fa-envelope" style="font-size: 3.5rem; color: var(--accent-color);"></i>
+                    </div>
+                    
+                    <h3>Contact Form</h3>
+                    
+                    <p style="margin-bottom: 30px;">
+                        Fill out our contact form and we'll get back to you as soon as possible.
+                    </p>
+                    
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeeNY0OuGuIZ03umeLKqzEnOFxo3G6-PWcaqZkM4FdQKTQdTw/viewform?usp=dialog" target="_blank" class="pub-btn" style="display: inline-block; min-width: 200px;">
+                        Open Contact Form
+                    </a>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
         <div class="container">
             <div class="footer-content">
-                
                 <div class="footer-col">
                     <h4>The Kind Lab</h4>
                     <p>
@@ -73,7 +102,6 @@
                         </a>
                     </div>
                 </div>
-
             </div>
         </div>
 

@@ -19,16 +19,21 @@
         <nav>
             <ul class="nav-links">
                 <li><a href="index.html" class="active">About</a></li>
+                <li><a href="news.html">News</a></li>
                 <li><a href="people.html">People</a></li>
-                <li><a href="publications.html">Publications</a></li>
-                <li><a href="projects.html">Current Projects</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Research</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="publications.html">Publications</a></li>
+                        <li><a href="projects.html">Current Projects</a></li>
+                    </ul>
+                </li>
                 <li><a href="contact.html">Contact Us</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>  
-        
+    <main>
         <section id="intro">
             <div class="container">
                 <h1 class="section-title" style="border:none; padding:0;">About Us</h1>
@@ -38,7 +43,6 @@
 
         <section id="mission-vision" class="bg-secondary">
             <div class="container">
-                
                 <div class="mv-card">
                     <h3>Culture</h3>
                     <p>Regarding the culture of the lab, we work remotely and meet in person when we can. We share virtual space and physical space to accommodate various work preferences. We do our best to meet deadlines, but we prioritize your well being and mental health.</p>
@@ -48,7 +52,6 @@
                     <h3>Vision</h3>
                     <p>Although some level of accessibility is required by law, it is a bare minimum that often does not meet the needs of people with disabilities. We want to increase awareness of how important accessibility is, and help spread information on how to more successfully implement it.</p>
                 </div>
-
             </div>
         </section>
 
@@ -60,7 +63,6 @@
                 </div>
 
                 <div class="values-list">
-                    
                     <div class="value-row">
                         <div class="value-visual">
                             <i class="fas fa-universal-access" style="font-size: 3rem; color: #ccc;"></i>
@@ -83,99 +85,15 @@
                 </div>
             </div>
         </section>
-
-        <section id="news">
-            <div class="container news-container">
-                <h2 class="section-title">Recent News</h2>
-
-                <h3 class="news-year">2025</h3>
-                
-                <div class="news-item">
-                    <span class="news-badge">NSF Grant</span>
-                    <p class="news-heading">
-                        <strong>Pioneering Accessibility Education:</strong> We are launching a collaborative NSF project with RIT, Creighton University, and Teach Access. This initiative involves faculty training with industry leaders like Google and Microsoft to transform how accessibility is taught in computing.
-                    </p>
-                </div>
-
-                <h3 class="news-year">2024</h3>
-                
-                <div class="news-item">
-                    <span class="news-badge">Award</span>
-                    <p class="news-heading">
-                        <strong>PCI Best Paper Award</strong> granted to <a href="https://dl.acm.org/doi/abs/10.1145/3626252.3630788" target="_blank">Beyond HCI: The Need for Accessibility Across the CS Curriculum</a> at the <a href="https://sigcse2024.sigcse.org/details/sigcse-ts-2024-Papers-1/55/Beyond-HCI-The-Need-for-Accessibility-Across-the-CS-Curriculum" target="_blank">SIGCSE Technical Symposium</a>.
-                    </p>
-                </div>
-
-                <div class="news-item">
-                    <span class="news-badge">Workshop</span>
-                    <p class="news-heading">
-                        In collaboration with <a href="https://teachaccess.org/" target="_blank">TeachAccess</a>, we hosted a workshop focused on <a href="https://dl.acm.org/doi/abs/10.1145/3626253.3633430" target="_blank">integrating accessibility into CS courses</a>.
-                    </p>
-                </div>
-
-                <div class="news-item">
-                    <span class="news-badge">Publication</span>
-                    <p class="news-heading">
-                        New Book Chapter: <a href="https://bookish.press/tac/DataStructures" target="_blank">Data Structures + Accessibility</a> in <em>Teaching Accessible Computing</em>, the first book explaining how to teach accessibility in the field of CS.
-                    </p>
-                </div>
-
-                <div class="news-item">
-                    <span class="news-badge">Presentation</span>
-                    <p class="news-heading">
-                        Undergrad researcher Tyanin Opdahl presented the paper <a href="https://dl.acm.org/doi/abs/10.1145/3626252.3630815" target="_blank">Crafting Disability Fairness Learning in Data Science</a> at the SIGCSE Technical Symposium.
-                    </p>
-                </div>
-
-                <h3 class="news-year">2023</h3>
-
-                <div class="news-item">
-                    <span class="news-badge">Panel</span>
-                    <p class="news-heading">
-                        Participated in a LinkedIn Livestream panel discussing <a href="https://www.linkedin.com/events/7042156164020609025/about/" target="_blank">how the pandemic has impacted women in computing</a>.
-                    </p>
-                </div>
-
-                <div class="news-item">
-                    <span class="news-badge">Presentation</span>
-                    <p class="news-heading">
-                        Undergrad researcher Pax Newman presented the paper <a href="https://dl.acm.org/doi/abs/10.1145/3545945.3569802" target="_blank">Towards Machine Learning Fairness Education in a Natural Language Processing Course</a>.
-                    </p>
-                </div>
-
-                <h3 class="news-year">2022</h3>
-
-                <div class="news-item">
-                    <span class="news-badge">Workshop</span>
-                    <p class="news-heading">
-                        Hosted an online workshop discussing <a href="https://dl.acm.org/doi/abs/10.1145/3517428.3550404" target="_blank">how to successfully teach accessibility in computing</a>.
-                    </p>
-                </div>
-
-                <h3 class="news-year">2021</h3>
-
-                <div class="news-item">
-                    <span class="news-badge">Grant</span>
-                    <p class="news-heading">
-                        Received a grant from the <strong>US National Science Foundation</strong> for <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2121606" target="_blank">Helping Computer Science Students Learn How to Build Accessible Computing Technologies</a>.
-                    </p>
-                </div>
-
-                <div class="news-item">
-                    <span class="news-badge">Grant</span>
-                    <p class="news-heading">
-                        Received a grant from <strong>SIGCSE</strong> for <a href="https://sigcse.org/programs/special/2021.html" target="_blank">Teaching Accessibility for Fairness in AI Courses</a>.
-                    </p>
-                </div>
-
-            </div>
-        </section>
     </main>
 
     <footer>
         <div class="container">
             <div class="footer-content">
                 
+                <div class="footer-col">
+                    <h4>The Kind Lab</h4>
+                    <p>
                 <div class="footer-col">
                     <h4>The Kind Lab</h4>
                     <p>
@@ -211,12 +129,7 @@
                             Kind Lab GitHub
                         </a>
                     </div>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="footer-bottom">
+                </div>        <div class="footer-bottom">
             <p>
                 &copy; 2025 The Kind Lab. All rights reserved.
             </p>
