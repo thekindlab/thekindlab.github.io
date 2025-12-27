@@ -468,11 +468,16 @@ header {
     flex-shrink: 0;
 }
 
+/* UNIFIED BUTTON STYLE */
 .pub-btn {
     display: inline-block;
     padding: 10px 20px;
+    
+    /* Standard Solid Blue Look */
+    background-color: var(--primary-color);
+    color: #fff;
     border: 2px solid var(--primary-color);
-    color: var(--primary-color);
+    
     font-weight: 600;
     font-size: 0.8rem;
     border-radius: 6px;
@@ -481,24 +486,15 @@ header {
     transition: all 0.2s ease;
     white-space: nowrap;
     text-align: center;
-    min-width: 140px;
+    min-width: 140px; /* Uniform width */
 }
 
 .pub-btn:hover {
-    background-color: var(--primary-color);
+    background-color: var(--accent-color); /* Green on hover */
+    border-color: var(--accent-color);
     color: #fff;
     transform: translateY(-2px);
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-.pub-btn.pdf {
-    background-color: var(--primary-color);
-    color: #fff;
-}
-
-.pub-btn.pdf:hover {
-    background-color: var(--accent-color);
-    border-color: var(--accent-color);
 }
 
 /* ==========================================================================
