@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>People</title>
     <link rel="icon" type="image/png" href="images/kindLogos/favicon_32x32.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -10,13 +10,14 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <header>
         <div class="branding">
             <a href="index.html" class="logo-link">
                 <img src="images/kindLogos/KIND_SYMBOL-tiny-transparent-.png" alt="Lab Logo" class="logo-img">
             </a>
-            <span class="logo-text">THE KIND LAB</span>
+            <span class="logo-text">The KIND Lab</span>
         </div>
         <nav>
             <ul class="nav-links">
@@ -35,9 +36,17 @@
         </nav>
     </header>
 
-    <main class="container">
-        <section class="people-group">
-            <h2 class="people-header">Faculty</h2>
+    <main id="main-content" tabindex="-1">
+        <section id="intro">
+            <div class="container">
+                <h1 class="section-title">People</h1>
+                <p>Meet the members of the KIND Lab.</p>
+            </div>
+        </section>
+
+        <div class="container">
+            <section class="people-group">
+                <h2 class="people-header">Faculty</h2>
             
             <div class="faculty-card">
                 <div class="profile-img-container large">
@@ -55,134 +64,393 @@
                         <p>516 High Street</p>
                         <p>Bellingham, Washington 98225</p>
                         <div class="social-icons">
-                            <a href="https://www.yasmineelglaly.com" target="_blank" title="Personal Website">
-                                <i class="fas fa-globe"></i>
+                            <a href="https://www.yasmineelglaly.com" target="_blank" rel="noopener noreferrer" aria-label="Personal Website (opens in new tab)">
+                                <i class="fas fa-globe" aria-hidden="true"></i>
                             </a>
 
-                            <a href="https://scholar.google.com/citations?user=RItmmQMAAAAJ&hl=en" target="_blank" title="Google Scholar">
-                                <i class="ai ai-google-scholar"></i>
+                            <a href="https://scholar.google.com/citations?user=RItmmQMAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar (opens in new tab)">
+                                <i class="ai ai-google-scholar" aria-hidden="true"></i>
                             </a>
 
-                            <a href="https://www.linkedin.com/in/yasmine-elglaly/" target="_blank" title="LinkedIn">
-                                <i class="fab fa-linkedin"></i>
+                            <a href="https://www.linkedin.com/in/yasmine-elglaly/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (opens in new tab)">
+                                <i class="fab fa-linkedin" aria-hidden="true"></i>
                             </a>
 
-                            <a href="https://www.researchgate.net/profile/Yasmine-Elglaly" target="_blank" title="ResearchGate">
-                                <i class="ai ai-researchgate"></i>
+                            <a href="https://www.researchgate.net/profile/Yasmine-Elglaly" target="_blank" rel="noopener noreferrer" aria-label="ResearchGate (opens in new tab)">
+                                <i class="ai ai-researchgate" aria-hidden="true"></i>
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+            </section>
 
-        <section class="people-group">
-            <h2 class="people-header">Current Students</h2>
-            
-            <div class="student-grid">
-                <div class="student-card">
-                    <div class="profile-img-container small">
-                        <img src="images/currentStudents/student.png" alt="Student Name" class="profile-img">
-                    </div>
-                    <div class="profile-info">
-                        <h4 class="student-name">Temp Student <span class="degree">BS CS</span></h4>
-                        <p class="student-bio">
-                            Hey I'm a fake student studying
-                        </p>
-                    </div>
-                </div>
-
-                <div class="student-card">
-                    <div class="profile-img-container small">
-                        <img src="images/currentStudents/student.png" alt="Student Name" class="profile-img">
-                    </div>
-                    <div class="profile-info">
-                        <h4 class="student-name">Temp Student <span class="degree">MS CS</span></h4>
-                        <p class="student-bio">
-                            Hey I'm a fake student studying
-                        </p>
-                    </div>
-                </div>
-
-                <div class="student-card">
-                    <div class="profile-img-container small">
-                        <img src="images/currentStudents/student.png" alt="Student Name" class="profile-img">
-                    </div>
-                    <div class="profile-info">
-                        <h4 class="student-name">Temp Student <span class="degree">MS CS</span></h4>
-                        <p class="student-bio">
-                            Hey I'm a fake student studying
-                        </p>
-                    </div>
-                </div>
-
-                <div class="student-card">
-                    <div class="profile-img-container small">
-                        <img src="images/currentStudents/student.png" alt="Student Name" class="profile-img">
-                    </div>
-                    <div class="profile-info">
-                        <h4 class="student-name">Temp Student <span class="degree">BS CS</span></h4>
-                        <p class="student-bio">
-                            Hey I'm a fake student studying
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="people-group">
-            <h2 class="people-header">Alumni</h2>
+            <section class="people-group">
+                <h2 class="people-header">Current Students</h2>
 
             <div class="student-grid">
                 <div class="student-card">
                     <div class="profile-img-container small">
-                        <img src="images/alumni/alumni.jpeg" alt="Student Name" class="profile-img">
+                        <img src="images/currentStudents/tyanin.png" alt="Tyanin Opdahl" class="profile-img">
                     </div>
                     <div class="profile-info">
-                        <h4 class="student-name">Temp Student <span class="degree">PhD</span></h4>
+                        <h3 class="student-name">Tyanin Opdahl <span class="degree">BS, MS CS</span></h3>
                         <p class="student-bio">
-                            Hey I'm a big kid now!
+                            Research Assistant
+                        </p>
+                        <a href="https://www.linkedin.com/in/tyanin/" target="_blank" rel="noopener noreferrer" aria-label="Tyanin Opdahl LinkedIn (opens in new tab)">
+                            <i class="fab fa-linkedin" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="profile-img-container small">
+                        <img src="images/currentStudents/student.png" alt="Ryan Critchlow" class="profile-img">
+                    </div>
+                    <div class="profile-info">
+                        <h3 class="student-name">Ryan Critchlow <span class="degree">BA MIS, MS CS</span></h3>
+                        <p class="student-bio">
+                            Research Assistant
+                        </p>
+                        <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="Ryan Critchlow LinkedIn (opens in new tab)">
+                            <i class="fab fa-linkedin" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="profile-img-container small">
+                        <img src="images/currentStudents/student.png" alt="Kayla Warner" class="profile-img">
+                    </div>
+                    <div class="profile-info">
+                        <h3 class="student-name">Kayla Warner <span class="degree">BS CS</span></h3>
+                        <p class="student-bio">
+                            Research Assistant
+                        </p>
+                        <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="Kayla Warner LinkedIn (opens in new tab)">
+                            <i class="fab fa-linkedin" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="profile-img-container small">
+                        <img src="images/currentStudents/Io_Paul.jpeg" alt="Io Paul" class="profile-img">
+                    </div>
+                    <div class="profile-info">
+                        <h3 class="student-name">Io Paul <span class="degree">BS CS</span></h3>
+                        <p class="student-bio">
+                            Research Assistant
+                        </p>
+                        <a href="https://www.linkedin.com/in/ryan-critchlow/" target="_blank" rel="noopener noreferrer" aria-label="Io Paul LinkedIn (opens in new tab)">
+                            <i class="fab fa-linkedin" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="profile-img-container small">
+                        <img src="images/currentStudents/student.png" alt="Ashley" class="profile-img">
+                    </div>
+                    <div class="profile-info">
+                        <h3 class="student-name">Ashley <span class="degree">BS CS</span></h3>
+                        <p class="student-bio">
+                            Research Assistant
+                        </p>
+                        <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="Ashley LinkedIn (opens in new tab)">
+                            <i class="fab fa-linkedin" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+            </section>
+
+            <section class="people-group">
+                <h2 class="people-header">Alumni</h2>
+            <div class="student-grid">
+                <div class="student-card">
+                    <div class="profile-img-container small">
+                        <img src="images/alumni/alumni.jpeg" alt="Clare Gaskill" class="profile-img">
+                    </div>
+                    <div class="profile-info">
+                        <h3 class="student-name">Clare Gaskill <span class="degree">BS CS</span></h3>
+                        <p class="student-bio">
+                            Research Assistant
+                        </p>
+                        <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="Claire Gaskill LinkedIn (opens in new tab)">
+                            <i class="fab fa-linkedin" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="profile-img-container small">
+                        <img src="images/alumni/alumni.jpeg" alt="Manuel Garduno Munoz" class="profile-img">
+                    </div>
+                    <div class="profile-info">
+                        <h3 class="student-name">Manuel Garduno Munoz <span class="degree">BS CS</span></h3>
+                        <p class="student-bio">
+                            Research Assistant
+                        </p>
+                        <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="Manuel Garduno Munoz LinkedIn (opens in new tab)">
+                            <i class="fab fa-linkedin" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="profile-img-container small">
+                        <img src="images/alumni/thuan.jpg" alt="Thuan Nguyen" class="profile-img">
+                    </div>
+                    <div class="profile-info">
+                        <h3 class="student-name">Thuan Nguyen <span class="degree">MS CS</span></h3>
+                        <p class="student-bio">
+                            Research Assistant and Teaching Assistant
+                        </p>
+                        <a href="https://www.linkedin.com/in/thuan-nguyen-200299/" target="_blank" rel="noopener noreferrer" aria-label="Thuan Nguyen LinkedIn (opens in new tab)">
+                            <i class="fab fa-linkedin" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="profile-img-container small">
+                        <img src="images/alumni/selah.jpeg" alt="Selah Bellscheidt" class="profile-img">
+                    </div>
+                    <div class="profile-info">
+                        <h3 class="student-name">Selah Bellscheidt <span class="degree">MS CS</span></h3>
+                        <p class="student-bio">
+                            Research Assistant
+                        </p>
+                        <a href="https://www.linkedin.com/in/selah-bell/" target="_blank" rel="noopener noreferrer" aria-label="Selah Bellscheidt LinkedIn (opens in new tab)">
+                            <i class="fab fa-linkedin" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="profile-img-container small">
+                        <img src="images/alumni/alumni.jpeg" alt="Gulam Sulaman Choudhury" class="profile-img">
+                    </div>
+                    <div class="profile-info">
+                        <h3 class="student-name">Gulam Sulaman Choudhury <span class="degree">MS CS</span></h3>
+                        <p class="student-bio">
+                            Research Assistant
+                        </p>
+                        <a href="https://www.linkedin.com/in/gulamsulaman/" target="_blank" rel="noopener noreferrer" aria-label="Gulam Sulaman Choudhury LinkedIn (opens in new tab)">
+                            <i class="fab fa-linkedin" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="profile-img-container small">
+                        <img src="images/alumni/hidemi.jpg" alt="Hidemi Mitani Shen" class="profile-img">
+                    </div>
+                    <div class="profile-info">
+                        <h3 class="student-name">Hidemi Mitani Shen <span class="degree">MS CS</span></h3>
+                        <p class="student-bio">
+                            Course Planning Assistant
+                        </p>
+                        <a href="https://www.linkedin.com/in/hidemi-mitani-shen/" target="_blank" rel="noopener noreferrer" aria-label="Hidemi Mitani Shen LinkedIn (opens in new tab)">
+                            <i class="fab fa-linkedin" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="profile-img-container small">
+                        <img src="images/alumni/aidan.jpg" alt="Aidan Hill" class="profile-img">
+                    </div>
+                    <div class="profile-info">
+                        <h3 class="student-name">Aidan Hill <span class="degree">BS CS</span></h3>
+                        <p class="student-bio">
+                            Research Assistant
+                        </p>
+                        <a href="https://www.linkedin.com/in/aidan-hill-3553b922a" target="_blank" rel="noopener noreferrer" aria-label="Aidan Hill LinkedIn (opens in new tab)">
+                            <i class="fab fa-linkedin" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="profile-img-container small">
+                        <img src="images/alumni/binh.jpg" alt="Binh Ngo" class="profile-img">
+                    </div>
+                    <div class="profile-info">
+                        <h3 class="student-name">Binh Ngo <span class="degree">BS CS</span></h3>
+                        <p class="student-bio">
+                            Research Assistant, TA, and Web Assistant
+                        </p>
+                        <a href="https://www.linkedin.com/in/harry-n-287a47179/" target="_blank" rel="noopener noreferrer" aria-label="Binh Ngo LinkedIn (opens in new tab)">
+                            <i class="fab fa-linkedin" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="profile-img-container small">
+                        <img src="images/alumni/abigayle.jpg" alt="Abigayle Peterson" class="profile-img">
+                    </div>
+                    <div class="profile-info">
+                        <h3 class="student-name">Abigayle Peterson <span class="degree">BS CS</span></h3>
+                        <p class="student-bio">
+                            Research Assistant
+                        </p>
+                        <a href="https://www.linkedin.com/in/abigaylepeterson/" target="_blank" rel="noopener noreferrer" aria-label="Abigayle Peterson LinkedIn (opens in new tab)">
+                            <i class="fab fa-linkedin" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="profile-img-container small">
+                        <img src="images/alumni/alumni.jpeg" alt="Jadyn Barrett" class="profile-img">
+                    </div>
+                    <div class="profile-info">
+                        <h3 class="student-name">Jadyn Barrett <span class="degree">BS CS</span></h3>
+                        <p class="student-bio">
+                            Research Assistant
+                        </p>
+                        <a href="https://www.linkedin.com/in/jadyn-barrett/" target="_blank" rel="noopener noreferrer" aria-label="Jadyn Barrett LinkedIn (opens in new tab)">
+                            <i class="fab fa-linkedin" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="profile-img-container small">
+                        <img src="images/alumni/alumni.jpeg" alt="Kai Young" class="profile-img">
+                    </div>
+                    <div class="profile-info">
+                        <h3 class="student-name">Kai Young <span class="degree">BS CS</span></h3>
+                        <p class="student-bio">
+                            Research Assistant
+                        </p>
+                        <a href="https://www.linkedin.com/in/kai-young-2614232a0/" target="_blank" rel="noopener noreferrer" aria-label="Kai Young LinkedIn (opens in new tab)">
+                            <i class="fab fa-linkedin" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="profile-img-container small">
+                        <img src="images/alumni/nahom.jpg" alt="Nahom Azmach" class="profile-img">
+                    </div>
+                    <div class="profile-info">
+                        <h3 class="student-name">Nahom Azmach <span class="degree">BS CS</span></h3>
+                        <p class="student-bio">
+                            Research Assistant
+                        </p>
+                        <a href="https://www.linkedin.com/in/nahom-azmach/" target="_blank" rel="noopener noreferrer" aria-label="Nahom Azmach LinkedIn (opens in new tab)">
+                            <i class="fab fa-linkedin" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="profile-img-container small">
+                        <img src="images/alumni/eli.jpg" alt="Eli Bennett" class="profile-img">
+                    </div>
+                    <div class="profile-info">
+                        <h3 class="student-name">Eli Bennett <span class="degree">BS CS</span></h3>
+                        <p class="student-bio">
+                            Lead Tutor
                         </p>
                     </div>
                 </div>
 
                 <div class="student-card">
                     <div class="profile-img-container small">
-                        <img src="images/alumni/alumni.jpeg" alt="Student Name" class="profile-img">
+                        <img src="images/alumni/alumni.jpeg" alt="Andrew Cox" class="profile-img">
                     </div>
                     <div class="profile-info">
-                        <h4 class="student-name">Temp Student <span class="degree">PhD</span></h4>
+                        <h3 class="student-name">Andrew Cox <span class="degree">BS CS</span></h3>
                         <p class="student-bio">
-                            What do you mean I have to work an entire year to accrue PTO!?
+                            Research Assistant
                         </p>
                     </div>
                 </div>
 
                 <div class="student-card">
                     <div class="profile-img-container small">
-                        <img src="images/alumni/alumni.jpeg" alt="Student Name" class="profile-img">
+                        <img src="images/alumni/di.jpg" alt="Di Pham" class="profile-img">
                     </div>
                     <div class="profile-info">
-                        <h4 class="student-name">Temp Student <span class="degree">PhD</span></h4>
+                        <h3 class="student-name">Di Pham <span class="degree">BS CS</span></h3>
                         <p class="student-bio">
-                            I wanna go back to schooooool
+                            Post Bachelors Research Associate at Pacific Northwest National Laboratories
                         </p>
+                        <a href="https://www.linkedin.com/in/di-pham/" target="_blank" rel="noopener noreferrer" aria-label="Di Pham LinkedIn (opens in new tab)">
+                            <i class="fab fa-linkedin" aria-hidden="true"></i>
+                        </a>
                     </div>
                 </div>
 
                 <div class="student-card">
                     <div class="profile-img-container small">
-                        <img src="images/alumni/alumni.jpeg" alt="Student Name" class="profile-img">
+                        <img src="images/alumni/alumni.jpeg" alt="Pax Newman" class="profile-img">
                     </div>
                     <div class="profile-info">
-                        <h4 class="student-name">Temp Student <span class="degree">PhD</span></h4>
+                        <h3 class="student-name">Pax Newman <span class="degree">BS CS</span></h3>
                         <p class="student-bio">
-                            Should I get a post Doc?
+                            AI Engineer II
                         </p>
+                        <a href="https://www.linkedin.com/in/patrick-newman-61a252155/" target="_blank" rel="noopener noreferrer" aria-label="Pax Newman LinkedIn (opens in new tab)">
+                            <i class="fab fa-linkedin" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="profile-img-container small">
+                        <img src="images/alumni/samantha - cropped.jpg" alt="Samantha Jane Dobesh" class="profile-img">
+                    </div>
+                    <div class="profile-info">
+                        <h3 class="student-name">Samantha Jane Dobesh <span class="degree">BS, MS CS</span></h3>
+                        <p class="student-bio">
+                            Accessibility and HCI Researcher
+                        </p>
+                        <a href="https://www.linkedin.com/in/samantha-dobesh-a720891b1/" target="_blank" rel="noopener noreferrer" aria-label="Samantha Jane Dobesh LinkedIn (opens in new tab)">
+                            <i class="fab fa-linkedin" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="profile-img-container small">
+                        <img src="images/alumni/tyler.png" alt="Tyler Miller" class="profile-img">
+                    </div>
+                    <div class="profile-info">
+                        <h3 class="student-name">Tyler Miller <span class="degree">BS CS</span></h3>
+                        <p class="student-bio">
+                            Software Developer
+                        </p>
+                        <a href="https://www.linkedin.com/in/tyler-miller-670694156/" target="_blank" rel="noopener noreferrer" aria-label="Tyler Miller LinkedIn (opens in new tab)">
+                            <i class="fab fa-linkedin" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="profile-img-container small">
+                        <img src="images/alumni/alumni.jpeg" alt="Jordan Archer" class="profile-img">
+                    </div>
+                    <div class="profile-info">
+                        <h3 class="student-name">Jordan Archer <span class="degree">BA Creative Writing, Minor CS</span></h3>
+                        <p class="student-bio">
+                            KIND Lab Alumni
+                        </p>
+                        <a href="https://www.linkedin.com/in/jordan-archer-8a976a22a/" target="_blank" rel="noopener noreferrer" aria-label="Jordan Archer LinkedIn (opens in new tab)">
+                            <i class="fab fa-linkedin" aria-hidden="true"></i>
+                        </a>
                     </div>
                 </div>
             </div>
-        </section>
+            </section>
+        </div>
     </main>
 
     <footer>
@@ -210,17 +478,20 @@
                 <div class="footer-col">
                     <h4>Affiliations</h4>
                     <div class="footer-links">
-                        <a href="https://cs.wwu.edu" target="_blank">
-                            <i class="fas fa-university" style="margin-right:8px;"></i>
+                        <a href="https://cs.wwu.edu" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-university" aria-hidden="true"></i>
                             WWU Computer Science
+                            <span class="sr-only">(opens in new tab)</span>
                         </a>
-                        <a href="https://www.wwu.edu" target="_blank">
-                            <i class="fas fa-graduation-cap" style="margin-right:8px;"></i>
+                        <a href="https://www.wwu.edu" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-graduation-cap" aria-hidden="true"></i>
                             Western Washington University
+                            <span class="sr-only">(opens in new tab)</span>
                         </a>
-                        <a href="https://github.com/thekindlab" target="_blank">
-                            <i class="fab fa-github" style="margin-right:8px;"></i>
+                        <a href="https://github.com/thekindlab" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github" aria-hidden="true"></i>
                             Kind Lab GitHub
+                            <span class="sr-only">(opens in new tab)</span>
                         </a>
                     </div>
                 </div>
@@ -230,7 +501,7 @@
 
         <div class="footer-bottom">
             <p>
-                &copy; 2025 The Kind Lab. All rights reserved.
+                &copy; 2025 The KIND Lab. All rights reserved.
             </p>
         </div>
     </footer>

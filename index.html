@@ -2,19 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>KIND Lab</title>
     <link rel="icon" type="image/png" href="images/kindLogos/favicon_32x32.png">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <header>
         <div class="branding">
             <a href="index.html" class="logo-link">
                 <img src="images/kindLogos/KIND_SYMBOL-tiny-transparent-.png" alt="Lab Logo" class="logo-img">
             </a>
-            <span class="logo-text">THE KIND LAB</span>
+            <span class="logo-text">The KIND Lab</span>
         </div>
         <nav>
             <ul class="nav-links">
@@ -33,23 +34,23 @@
         </nav>
     </header>
 
-    <main>
+    <main id="main-content" tabindex="-1">
         <section id="intro">
             <div class="container">
-                <h1 class="section-title" style="border:none; padding:0;">About Us</h1>
+                <h1 class="section-title">About Us</h1>
                 <p>KIND stands for Komputing for INclusion and Disability. In the KIND lab, we collaborate on projects that aim to make accessibility mainstream in the software industry as well as in computing education.</p>
             </div>
         </section>
 
-        <section id="mission-vision" class="bg-secondary">
+        <section id="mission-vision">
             <div class="container">
                 <div class="mv-card">
-                    <h3>Culture</h3>
+                    <h2>Culture</h2>
                     <p>Regarding the culture of the lab, we work remotely and meet in person when we can. We share virtual space and physical space to accommodate various work preferences. We do our best to meet deadlines, but we prioritize your well being and mental health.</p>
                 </div>
 
                 <div class="mv-card">
-                    <h3>Vision</h3>
+                    <h2>Vision</h2>
                     <p>Although some level of accessibility is required by law, it is a bare minimum that often does not meet the needs of people with disabilities. We want to increase awareness of how important accessibility is, and help spread information on how to more successfully implement it.</p>
                 </div>
             </div>
@@ -59,26 +60,26 @@
             <div class="container">
                 <div class="values-header">
                     <h2>Our Approach</h2>
-                    <p style="color: #666;">How we translate our vision into action</p>
+                    <p>How we translate our vision into action</p>
                 </div>
 
                 <div class="values-list">
                     <div class="value-row">
                         <div class="value-visual">
-                            <i class="fas fa-universal-access" style="font-size: 3rem; color: #ccc;"></i>
+                            <i class="fas fa-universal-access" aria-hidden="true"></i>
                         </div>
                         <div class="value-content">
-                            <h4>Design for Access</h4>
+                            <h3>Design for Access</h3>
                             <p>We design software specifically for people with disabilities to support their learning and access to information, ensuring technology serves everyone regardless of ability.</p>
                         </div>
                     </div>
 
                     <div class="value-row">
                         <div class="value-visual">
-                            <i class="fas fa-video" style="font-size: 3rem; color: #ccc;"></i>
+                            <i class="fas fa-video" aria-hidden="true"></i>
                         </div>
                         <div class="value-content">
-                            <h4>Inclusive Innovation</h4>
+                            <h3>Inclusive Innovation</h3>
                             <p>We challenge standard paradigms by building tools that don't rely on traditional inputs. An example of our work is an accessible video editor that does not rely on vision.</p>
                         </div>
                     </div>
@@ -86,14 +87,10 @@
             </div>
         </section>
     </main>
-
+    
     <footer>
         <div class="container">
             <div class="footer-content">
-                
-                <div class="footer-col">
-                    <h4>The Kind Lab</h4>
-                    <p>
                 <div class="footer-col">
                     <h4>The Kind Lab</h4>
                     <p>
@@ -116,25 +113,32 @@
                 <div class="footer-col">
                     <h4>Affiliations</h4>
                     <div class="footer-links">
-                        <a href="https://cs.wwu.edu" target="_blank">
-                            <i class="fas fa-university" style="margin-right:8px;"></i>
+                        <a href="https://cs.wwu.edu" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-university" aria-hidden="true"></i>
                             WWU Computer Science
+                            <span class="sr-only">(opens in new tab)</span>
                         </a>
-                        <a href="https://www.wwu.edu" target="_blank">
-                            <i class="fas fa-graduation-cap" style="margin-right:8px;"></i>
+                        <a href="https://www.wwu.edu" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-graduation-cap" aria-hidden="true"></i>
                             Western Washington University
+                            <span class="sr-only">(opens in new tab)</span>
                         </a>
-                        <a href="https://github.com/thekindlab" target="_blank">
-                            <i class="fab fa-github" style="margin-right:8px;"></i>
+                        <a href="https://github.com/thekindlab" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github" aria-hidden="true"></i>
                             Kind Lab GitHub
+                            <span class="sr-only">(opens in new tab)</span>
                         </a>
                     </div>
-                </div>        <div class="footer-bottom">
+                </div>
+
+            </div>
+        </div>
+
+        <div class="footer-bottom">
             <p>
-                &copy; 2025 The Kind Lab. All rights reserved.
+                &copy; 2025 The KIND Lab. All rights reserved.
             </p>
         </div>
     </footer>
-
 </body>
 </html>

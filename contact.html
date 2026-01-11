@@ -2,20 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Contact</title>
     <link rel="icon" type="image/png" href="images/kindLogos/favicon_32x32.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <header>
         <div class="branding">
             <a href="index.html" class="logo-link">
                 <img src="images/kindLogos/KIND_SYMBOL-tiny-transparent-.png" alt="Lab Logo" class="logo-img">
             </a>
-            <span class="logo-text">THE KIND LAB</span>
+            <span class="logo-text">The KIND Lab</span>
         </div>
         <nav>
             <ul class="nav-links">
@@ -34,29 +35,30 @@
         </nav>
     </header>
 
-    <main>
+    <main id="main-content" tabindex="-1">
         <section id="intro">
             <div class="container">
-                <h1 class="section-title" style="border:none; padding:0;">Get In Touch</h1>
+                <h1 class="section-title">Get In Touch</h1>
                 <p>Interested in collaborating, joining the lab, or learning more about our work? We'd love to hear from you.</p>
             </div>
         </section>
 
-        <section id="contact-content" style="background-color: var(--bg-secondary); padding: 80px 0;">
+        <section id="contact-content">
             <div class="container">
                 <div class="mv-card">
-                    <div style="margin-bottom: 25px;">
-                        <i class="fas fa-envelope" style="font-size: 3.5rem; color: var(--accent-color);"></i>
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
                     </div>
-                    
-                    <h3>Contact Form</h3>
-                    
-                    <p style="margin-bottom: 30px;">
+
+                    <h2>Contact Form</h2>
+
+                    <p class="contact-description">
                         Fill out our contact form and we'll get back to you as soon as possible.
                     </p>
-                    
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeeNY0OuGuIZ03umeLKqzEnOFxo3G6-PWcaqZkM4FdQKTQdTw/viewform?usp=dialog" target="_blank" class="pub-btn" style="display: inline-block; min-width: 200px;">
+
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeeNY0OuGuIZ03umeLKqzEnOFxo3G6-PWcaqZkM4FdQKTQdTw/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" class="pub-btn pub-btn-wide">
                         Open Contact Form
+                        <span class="sr-only">(opens in new tab)</span>
                     </a>
                 </div>
             </div>
@@ -88,29 +90,32 @@
                 <div class="footer-col">
                     <h4>Affiliations</h4>
                     <div class="footer-links">
-                        <a href="https://cs.wwu.edu" target="_blank">
-                            <i class="fas fa-university" style="margin-right:8px;"></i>
+                        <a href="https://cs.wwu.edu" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-university" aria-hidden="true"></i>
                             WWU Computer Science
+                            <span class="sr-only">(opens in new tab)</span>
                         </a>
-                        <a href="https://www.wwu.edu" target="_blank">
-                            <i class="fas fa-graduation-cap" style="margin-right:8px;"></i>
+                        <a href="https://www.wwu.edu" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-graduation-cap" aria-hidden="true"></i>
                             Western Washington University
+                            <span class="sr-only">(opens in new tab)</span>
                         </a>
-                        <a href="https://github.com/thekindlab" target="_blank">
-                            <i class="fab fa-github" style="margin-right:8px;"></i>
+                        <a href="https://github.com/thekindlab" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github" aria-hidden="true"></i>
                             Kind Lab GitHub
+                            <span class="sr-only">(opens in new tab)</span>
                         </a>
                     </div>
                 </div>
+
             </div>
         </div>
 
         <div class="footer-bottom">
             <p>
-                &copy; 2025 The Kind Lab. All rights reserved.
+                &copy; 2025 The KIND Lab. All rights reserved.
             </p>
         </div>
     </footer>
-
 </body>
 </html>

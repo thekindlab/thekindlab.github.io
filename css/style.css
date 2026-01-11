@@ -7,17 +7,26 @@
     /* Brand Colors */
     --primary-color: #1F3A5F;      /* Deep navy for headings and footer */
     --accent-color: #6e9134;       /* Leaf green for links and buttons (WCAG AA compliant) */
-    
+
     /* Text Colors */
     --text-color: #333333;         /* Main body text */
     --text-light: #555555;         /* Secondary text */
-    
+    --text-muted: #777777;         /* De-emphasized text (roles, metadata) */
+    --text-faint: #888888;         /* Very subtle text (degree labels) */
+
     /* Backgrounds */
     --bg-color: #ffffff;           /* Main page background */
     --bg-secondary: #F4F7F6;       /* Subtle tinted grey for alternating sections */
-    
+    --bg-hover: #f5f5f5;           /* Hover state backgrounds */
+
+    /* Borders & Dividers */
+    --border-light: #eeeeee;       /* Light borders and dividers */
+    --border-medium: #cccccc;      /* Medium borders */
+
     /* Layout */
     --nav-height: 90px;
+    --container-padding: 40px;
+    --container-padding-mobile: 20px;
     --font-main: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
 }
 
@@ -66,7 +75,7 @@ ul {
 .container {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 0 40px;
+    padding: 0 var(--container-padding);
     width: 100%;
 }
 
@@ -76,10 +85,7 @@ section {
 }
 
 /* Consistent intro section styling across all pages */
-#intro, 
-#publications-intro, 
-#projects-intro, 
-.people-group:first-of-type {
+#intro {
     padding-top: 80px;
     padding-bottom: 60px;
     text-align: center;
@@ -94,14 +100,56 @@ section {
     line-height: 1.2;
 }
 
+/* Section title within intro - no border/padding */
+#intro .section-title {
+    border: none;
+    padding: 0;
+}
+
 /* Intro paragraph text styling */
-#intro p,
-#publications-intro p,
-#projects-intro p {
+#intro p {
     font-size: 1.25rem;
     color: var(--text-light);
     max-width: 800px;
     margin: 0 auto;
+}
+
+/* ==========================================================================
+   SKIP LINK (Accessibility)
+   ========================================================================== */
+
+/* Hidden skip link that appears on focus for keyboard users */
+.skip-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: var(--primary-color);
+    color: #fff;
+    padding: 10px 15px;
+    z-index: 1001;
+    font-weight: 600;
+    border-radius: 0 0 4px 0;
+    transform: translateY(-100%);
+    transition: transform 0.2s ease;
+}
+
+.skip-link:focus {
+    transform: translateY(0);
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+/* Screen reader only - visually hidden but accessible */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
 
 /* ==========================================================================
@@ -114,10 +162,10 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: #fff;
-    padding: 0 40px;
+    background: var(--bg-color);
+    padding: 0 var(--container-padding);
     position: sticky;
-    top: 0;
+    top: env(safe-area-inset-top, 0);
     z-index: 1000;
     border-top: 5px solid var(--accent-color);
     border-bottom: 1px solid rgba(0,0,0,0.05);
@@ -147,7 +195,6 @@ header {
     font-weight: 600;
     font-size: 1.4rem;
     letter-spacing: -0.5px;
-    text-transform: uppercase;
     color: var(--primary-color);
     line-height: 1;
 }
@@ -169,11 +216,20 @@ header {
     transition: transform 0.2s ease, color 0.2s ease;
 }
 
-/* Active and hover states */
+/* Active, hover, and focus states */
 .nav-links a:hover,
+.nav-links a:focus,
 .nav-links a.active {
     color: var(--accent-color);
     transform: scale(1.1);
+}
+
+/* Visible focus outline for keyboard navigation */
+a:focus,
+button:focus,
+.pub-btn:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
 }
 
 /* Dropdown menu container */
@@ -187,17 +243,15 @@ header {
     position: absolute;
     top: 100%;
     left: 0;
-    background: white;
-    list-style: none;
-    padding: 0;
-    margin: 0;
+    background: var(--bg-color);
     min-width: 200px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     z-index: 1000;
 }
 
-/* Show dropdown on hover */
-.dropdown:hover .dropdown-menu {
+/* Show dropdown on hover and keyboard focus */
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu {
     display: block;
 }
 
@@ -205,12 +259,11 @@ header {
 .dropdown-menu li a {
     display: block;
     padding: 12px 20px;
-    color: #333;
-    text-decoration: none;
+    color: var(--text-color);
 }
 
 .dropdown-menu li a:hover {
-    background: #f5f5f5;
+    background: var(--bg-hover);
 }
 
 
@@ -219,16 +272,37 @@ header {
    ========================================================================== */
 
 /* Mission & Vision section with alternate background */
-#mission-vision {
+#mission-vision,
+#contact-content {
     background-color: var(--bg-secondary);
     padding: 80px 0;
 }
 
+/* Contact card icon */
+.contact-icon {
+    margin-bottom: 25px;
+}
+
+.contact-icon i {
+    font-size: 3.5rem;
+    color: var(--accent-color);
+}
+
+/* Contact card description */
+.contact-description {
+    margin-bottom: 30px;
+}
+
+/* Wider button variant */
+.pub-btn-wide {
+    min-width: 200px;
+}
+
 /* White card container for mission/vision content */
 .mv-card {
-    background: #ffffff;
+    background: var(--bg-color);
     border-radius: 30px;
-    padding: 60px 40px;
+    padding: 60px var(--container-padding);
     max-width: 900px;
     margin: 0 auto 40px auto;
     text-align: center;
@@ -239,7 +313,7 @@ header {
     margin-bottom: 0;
 }
 
-.mv-card h3 {
+.mv-card h2 {
     font-size: 1.8rem;
     margin-bottom: 20px;
     color: var(--primary-color);
@@ -263,6 +337,10 @@ header {
 .values-header {
     text-align: center;
     margin-bottom: 80px;
+}
+
+.values-header p {
+    color: var(--text-muted);
 }
 
 .values-list {
@@ -290,7 +368,7 @@ header {
     flex: 1;
 }
 
-.value-content h4 {
+.value-content h3 {
     font-size: 1.5rem;
     margin-bottom: 15px;
     color: var(--primary-color);
@@ -310,10 +388,15 @@ header {
     font-weight: 600;
 }
 
+.value-visual i {
+    font-size: 3rem;
+    color: #ccc;
+}
+
 /* News section layout */
 #news {
-    background-color: #f9f9f9;
-    padding: 60px 0;
+    background-color: var(--bg-secondary);
+    padding: 80px 0;
 }
 
 .news-container {
@@ -327,19 +410,19 @@ header {
     color: var(--primary-color);
     font-weight: 700;
     margin: 40px 0 20px 0;
-    border-bottom: 2px solid #ddd;
+    border-bottom: 2px solid var(--border-medium);
     padding-bottom: 10px;
 }
 
 /* Individual news item card */
 .news-item {
-    background: #fff;
+    background: var(--bg-color);
     padding: 20px;
     margin-bottom: 15px;
     border-radius: 8px;
     border-left: 5px solid var(--accent-color);
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    transition: transform 0.2s;
+    transition: transform 0.2s ease;
 }
 
 /* Slide effect on hover */
@@ -369,8 +452,8 @@ header {
 /* Category badge (e.g., "Award", "Grant") */
 .news-badge {
     display: inline-block;
-    background-color: #eee;
-    color: #555;
+    background-color: var(--border-light);
+    color: var(--text-light);
     font-size: 0.75rem;
     padding: 2px 8px;
     border-radius: 4px;
@@ -385,14 +468,25 @@ header {
 
 /* Section grouping (faculty, students, alumni) */
 .people-group {
-    padding-bottom: 6px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+/* First people-group needs more top padding after intro */
+.people-group:first-of-type {
+    padding-top: 80px;
+}
+
+/* Last people-group needs more bottom padding */
+.people-group:last-of-type {
+    padding-bottom: 80px;
 }
 
 /* Section headers (e.g., "Faculty", "Current Students") */
 .people-header {
     font-size: 1.5rem;
     color: var(--text-light);
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid var(--border-medium);
     padding-bottom: 10px;
     margin-bottom: 40px;
     font-weight: 400;
@@ -435,7 +529,7 @@ header {
 
 .profile-role {
     font-size: 1rem;
-    color: #777;
+    color: var(--text-muted);
     margin-bottom: 20px;
 }
 
@@ -471,7 +565,7 @@ header {
 .student-name .degree {
     font-weight: 400;
     font-size: 0.85rem;
-    color: #888;
+    color: var(--text-faint);
     margin-left: 5px;
 }
 
@@ -479,14 +573,24 @@ header {
    PUBLICATIONS PAGE
    ========================================================================== */
 
+/* Publications list container - spacing after intro */
+.publications-list {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
 /* Year divider headers */
 .year-heading {
     font-size: 2rem;
-    color: #ccc;
-    border-bottom: 2px solid #eee;
+    color: var(--border-medium);
+    border-bottom: 2px solid var(--border-light);
     margin-top: 60px;
     margin-bottom: 20px;
     font-weight: 800;
+}
+
+.year-heading:first-child {
+    margin-top: 0;
 }
 
 /* Individual publication entry */
@@ -495,7 +599,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 30px 0;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--border-light);
     gap: 30px;
 }
 
@@ -509,6 +613,7 @@ header {
     font-size: 1.1rem;
     font-weight: 700;
     color: var(--primary-color);
+    margin-top: 0;
     margin-bottom: 8px;
     line-height: 1.4;
     display: block;
@@ -621,9 +726,7 @@ footer {
     display: block;
     color: #fff;
     margin-bottom: 12px;
-    text-decoration: none;
     font-weight: 500;
-    transition: transform 0.2s ease, color 0.2s ease;
 }
 
 .footer-links a:hover {
@@ -631,13 +734,18 @@ footer {
     transform: translateY(-3px);
 }
 
+/* Footer link icons */
+.footer-links i {
+    margin-right: 8px;
+}
+
 /* Copyright bar at bottom */
 .footer-bottom {
     background-color: rgba(0, 0, 0, 0.2);
-    padding: 20px 40px;
+    padding: 20px var(--container-padding);
     font-size: 0.85rem;
     text-align: center;
-    color: #ccc;
+    color: var(--border-medium);
     border-top: 1px solid rgba(255,255,255,0.1);
 }
 
@@ -647,146 +755,173 @@ footer {
 
 /* Styles for tablets and mobile devices */
 @media (max-width: 768px) {
+    /* Use mobile padding variable */
+    :root {
+        --container-padding: var(--container-padding-mobile);
+    }
+
+    /* Reduce section padding on mobile */
+    section {
+        padding: 60px 0;
+    }
+
     /* Vertical stacked navigation for mobile */
-    header { 
+    header {
         position: relative;
         flex-direction: column;
         height: auto;
-        padding: 20px;
+        padding: var(--container-padding-mobile);
         gap: 20px;
     }
-    
+
     .branding {
         width: 100%;
         justify-content: center;
     }
-    
+
     .logo-text {
         font-size: 1.2rem;
     }
-    
+
     /* Vertical navigation menu items */
-    .nav-links { 
+    .nav-links {
         flex-direction: column;
         gap: 0;
         width: 100%;
     }
-    
+
     .nav-links > li {
         border-bottom: 1px solid rgba(0,0,0,0.05);
     }
-    
+
     .nav-links > li:last-child {
         border-bottom: none;
     }
-    
+
     .nav-links > li > a {
         display: block;
-        padding: 15px 20px;
+        padding: 15px var(--container-padding-mobile);
         text-align: center;
         font-size: 0.85rem;
     }
-    
+
     /* Dropdown menu - full width on mobile */
     .dropdown-menu {
         position: static;
         box-shadow: none;
-        background: #f9f9f9;
+        background: var(--bg-secondary);
         min-width: 100%;
     }
-    
+
     .dropdown-menu li {
         border-bottom: 1px solid rgba(0,0,0,0.03);
     }
-    
+
     .dropdown-menu li:last-child {
         border-bottom: none;
     }
-    
+
     .dropdown-menu li a {
-        padding: 12px 20px;
+        padding: 12px var(--container-padding-mobile);
         font-size: 0.8rem;
         text-align: center;
     }
-    
+
     /* Reduce heading sizes for mobile */
-    .section-title { 
-        font-size: 2rem; 
+    .section-title {
+        font-size: 1.75rem;
     }
-    
+
+    /* Reduce card padding on mobile */
+    .mv-card {
+        padding: 40px var(--container-padding-mobile);
+        border-radius: 20px;
+    }
+
+    /* Reduce value visual height on mobile */
+    .value-visual {
+        height: 200px;
+    }
+
     /* Stack value rows vertically */
-    .value-row, 
+    .value-row,
     .value-row:nth-child(even) {
         flex-direction: column;
         text-align: center;
         gap: 30px;
     }
-    
+
+    /* Reduce year heading sizes */
+    .year-heading,
+    .news-year {
+        font-size: 1.5rem;
+    }
+
     /* Center faculty cards on mobile */
-    .faculty-card { 
-        flex-direction: column; 
-        align-items: center; 
-        text-align: center; 
+    .faculty-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
-    
+
     /* Single column student grid */
-    .student-grid { 
-        grid-template-columns: 1fr; 
+    .student-grid {
+        grid-template-columns: 1fr;
     }
-    
+
     /* Center student cards */
-    .student-card { 
-        flex-direction: column; 
-        align-items: center; 
-        text-align: center; 
+    .student-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
-    
+
     /* Stack publication items vertically */
-    .pub-item { 
-        flex-direction: column; 
-        align-items: flex-start; 
-        gap: 20px; 
+    .pub-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
     }
-    
+
     /* Full width buttons on mobile */
-    .pub-buttons { 
-        width: 100%; 
+    .pub-buttons {
+        width: 100%;
     }
-    
-    .pub-btn { 
-        display: block; 
-        width: 100%; 
+
+    .pub-btn {
+        display: block;
+        width: 100%;
     }
-    
+
     /* Center footer content */
     .footer-content {
         flex-direction: column;
         gap: 30px;
         text-align: center;
     }
-    
+
     .footer-col {
         min-width: 100%;
     }
-    
+
     .footer-col h4 {
         margin-left: auto;
         margin-right: auto;
     }
-    
+
     .footer-links {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-    
+
     .footer-links a {
         display: inline-flex;
         align-items: center;
         justify-content: center;
     }
-    
+
     .footer-bottom {
-        padding: 20px;
+        padding: var(--container-padding-mobile);
     }
 }

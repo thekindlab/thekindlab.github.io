@@ -2,19 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Current Projects</title>
     <link rel="icon" type="image/png" href="images/kindLogos/favicon_32x32.png">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <header>
         <div class="branding">
             <a href="index.html" class="logo-link">
                 <img src="images/kindLogos/KIND_SYMBOL-tiny-transparent-.png" alt="Lab Logo" class="logo-img">
             </a>
-            <span class="logo-text">THE KIND LAB</span>
+            <span class="logo-text">The KIND Lab</span>
         </div>
         <nav>
             <ul class="nav-links">
@@ -33,8 +34,13 @@
         </nav>
     </header>
 
-    <main class="container">
-        <p>Some text</p>
+    <main id="main-content" tabindex="-1">
+        <section id="intro">
+            <div class="container">
+                <h1 class="section-title">Current Projects</h1>
+                <p>Coming soon.</p>
+            </div>
+        </section>
     </main>
 
     <footer>
@@ -52,6 +58,7 @@
                     <h4>Find Us</h4>
                     <p>
                         <strong>Kaiser Borsari Hall 421</strong><br>
+                        (CS Department Main Office)<br>
                         Western Washington University<br>
                         516 High Street<br>
                         Bellingham, WA 98225
@@ -61,15 +68,31 @@
                 <div class="footer-col">
                     <h4>Affiliations</h4>
                     <div class="footer-links">
-                        <a href="https://cs.wwu.edu" target="_blank">WWU Computer Science</a>
-                        <a href="https://www.wwu.edu" target="_blank">Western Washington University</a>
+                        <a href="https://cs.wwu.edu" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-university" aria-hidden="true"></i>
+                            WWU Computer Science
+                            <span class="sr-only">(opens in new tab)</span>
+                        </a>
+                        <a href="https://www.wwu.edu" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                            Western Washington University
+                            <span class="sr-only">(opens in new tab)</span>
+                        </a>
+                        <a href="https://github.com/thekindlab" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github" aria-hidden="true"></i>
+                            Kind Lab GitHub
+                            <span class="sr-only">(opens in new tab)</span>
+                        </a>
                     </div>
                 </div>
+
             </div>
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; 2025 The Kind Lab. All rights reserved.</p>
+            <p>
+                &copy; 2025 The KIND Lab. All rights reserved.
+            </p>
         </div>
     </footer>
 
