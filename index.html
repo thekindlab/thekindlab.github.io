@@ -19,14 +19,14 @@
         </div>
         <nav>
             <ul class="nav-links">
-                <li><a href="index.html" class="active">About</a></li>
+                <li><span class="active" aria-current="page">About</span></li>
                 <li><a href="news.html">News</a></li>
                 <li><a href="people.html">People</a></li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle">Research</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="publications.html">Publications</a></li>
-                        <li><a href="projects.html">Current Projects</a></li>
+                    <button class="dropdown-toggle" aria-expanded="false" aria-haspopup="true">Research</button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li role="none"><a href="publications.html" role="menuitem">Publications</a></li>
+                        <li role="none"><a href="projects.html" role="menuitem">Current Projects</a></li>
                     </ul>
                 </li>
                 <li><a href="contact.html">Contact Us</a></li>
@@ -140,5 +140,98 @@
             </p>
         </div>
     </footer>
+
+    <script>
+    // Accessible dropdown menu handling
+    document.addEventListener('DOMContentLoaded', function() {
+        const dropdowns = document.querySelectorAll('.dropdown');
+
+        dropdowns.forEach(function(dropdown) {
+            const toggle = dropdown.querySelector('.dropdown-toggle');
+            const menu = dropdown.querySelector('.dropdown-menu');
+            const menuItems = menu.querySelectorAll('[role="menuitem"]');
+
+            function openMenu() {
+                toggle.setAttribute('aria-expanded', 'true');
+                if (menuItems.length > 0) {
+                    menuItems[0].focus();
+                }
+            }
+
+            function closeMenu() {
+                toggle.setAttribute('aria-expanded', 'false');
+                toggle.focus();
+            }
+
+            // Toggle on click - open and focus first item
+            toggle.addEventListener('click', function() {
+                const expanded = toggle.getAttribute('aria-expanded') === 'true';
+                if (expanded) {
+                    closeMenu();
+                } else {
+                    openMenu();
+                }
+            });
+
+            // Keyboard navigation on toggle button
+            toggle.addEventListener('keydown', function(e) {
+                if (e.key === 'ArrowDown' || e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    openMenu();
+                }
+            });
+
+            // Update aria-expanded on mouse enter/leave
+            dropdown.addEventListener('mouseenter', function() {
+                toggle.setAttribute('aria-expanded', 'true');
+            });
+
+            dropdown.addEventListener('mouseleave', function() {
+                toggle.setAttribute('aria-expanded', 'false');
+            });
+
+            // Keyboard navigation within menu
+            menu.addEventListener('keydown', function(e) {
+                const currentIndex = Array.from(menuItems).indexOf(document.activeElement);
+
+                switch(e.key) {
+                    case 'ArrowDown':
+                        e.preventDefault();
+                        const nextIndex = (currentIndex + 1) % menuItems.length;
+                        menuItems[nextIndex].focus();
+                        break;
+                    case 'ArrowUp':
+                        e.preventDefault();
+                        const prevIndex = (currentIndex - 1 + menuItems.length) % menuItems.length;
+                        menuItems[prevIndex].focus();
+                        break;
+                    case 'Home':
+                        e.preventDefault();
+                        menuItems[0].focus();
+                        break;
+                    case 'End':
+                        e.preventDefault();
+                        menuItems[menuItems.length - 1].focus();
+                        break;
+                    case 'Escape':
+                        closeMenu();
+                        break;
+                    case 'Tab':
+                        toggle.setAttribute('aria-expanded', 'false');
+                        break;
+                }
+            });
+        });
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', function(e) {
+            dropdowns.forEach(function(dropdown) {
+                if (!dropdown.contains(e.target)) {
+                    dropdown.querySelector('.dropdown-toggle').setAttribute('aria-expanded', 'false');
+                }
+            });
+        });
+    });
+    </script>
 </body>
 </html>

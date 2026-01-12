@@ -206,7 +206,9 @@ header {
 }
 
 /* Navigation link styling with grow effect */
-.nav-links a {
+.nav-links a,
+.nav-links span.active,
+.nav-links .dropdown-toggle {
     font-size: 0.9rem;
     font-weight: 600;
     color: var(--text-color);
@@ -216,10 +218,21 @@ header {
     transition: transform 0.2s ease, color 0.2s ease;
 }
 
+/* Reset button defaults for dropdown toggle */
+.dropdown-toggle {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font-family: inherit;
+}
+
 /* Active, hover, and focus states */
 .nav-links a:hover,
 .nav-links a:focus,
-.nav-links a.active {
+.nav-links .dropdown-toggle:hover,
+.nav-links .dropdown-toggle:focus,
+.nav-links .active {
     color: var(--accent-color);
     transform: scale(1.1);
 }
@@ -256,7 +269,8 @@ button:focus,
 }
 
 /* Dropdown link styling */
-.dropdown-menu li a {
+.dropdown-menu li a,
+.dropdown-menu li span.active {
     display: block;
     padding: 12px 20px;
     color: var(--text-color);
@@ -264,6 +278,12 @@ button:focus,
 
 .dropdown-menu li a:hover {
     background: var(--bg-hover);
+}
+
+/* Active state for dropdown items */
+.dropdown-menu li span.active {
+    color: var(--accent-color);
+    font-weight: 600;
 }
 
 
@@ -323,7 +343,7 @@ button:focus,
 .mv-card p {
     font-size: 1.1rem;
     line-height: 1.8;
-    color: var(--text-light);
+    color: var(--text-color);
     max-width: 750px;
     margin: 0 auto;
 }
@@ -798,11 +818,14 @@ footer {
         border-bottom: none;
     }
 
-    .nav-links > li > a {
+    .nav-links > li > a,
+    .nav-links > li > span.active,
+    .nav-links > li > .dropdown-toggle {
         display: block;
         padding: 15px var(--container-padding-mobile);
         text-align: center;
         font-size: 0.85rem;
+        width: 100%;
     }
 
     /* Dropdown menu - full width on mobile */
@@ -821,7 +844,8 @@ footer {
         border-bottom: none;
     }
 
-    .dropdown-menu li a {
+    .dropdown-menu li a,
+    .dropdown-menu li span.active {
         padding: 12px var(--container-padding-mobile);
         font-size: 0.8rem;
         text-align: center;
