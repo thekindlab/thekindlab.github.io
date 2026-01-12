@@ -9,10 +9,7 @@
     --accent-color: #6e9134;       /* Leaf green for links and buttons (WCAG AA compliant) */
 
     /* Text Colors */
-    --text-color: #333333;         /* Main body text */
-    /* --text-light: #555555;         /* Secondary text */
-    --text-muted: #777777;         /* De-emphasized text (roles, metadata) */
-    --text-faint: #888888;         /* Very subtle text (degree labels) */
+    --text-color: #333333;         /* Main body text - WCAG AA compliant */
 
     /* Backgrounds */
     --bg-color: #ffffff;           /* Main page background */
@@ -175,6 +172,12 @@ header {
 .branding {
     display: flex;
     align-items: center;
+}
+
+/* Logo link containing image and text */
+.logo-link {
+    display: flex;
+    align-items: center;
     gap: 15px;
 }
 
@@ -186,7 +189,7 @@ header {
     transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.logo-img:hover {
+.logo-link:hover .logo-img {
     transform: scale(1.15);
 }
 
@@ -220,11 +223,17 @@ header {
 
 /* Reset button defaults for dropdown toggle */
 .dropdown-toggle {
-    background: none;
+    background: transparent;
     border: none;
     padding: 0;
     cursor: pointer;
     font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    color: inherit;
+    text-transform: inherit;
+    letter-spacing: inherit;
 }
 
 /* Active, hover, and focus states */
@@ -274,6 +283,8 @@ button:focus,
     display: block;
     padding: 12px 20px;
     color: var(--text-color);
+    font-weight: 600;
+    text-align: left;
 }
 
 .dropdown-menu li a:hover {
@@ -283,7 +294,7 @@ button:focus,
 /* Active state for dropdown items */
 .dropdown-menu li span.active {
     color: var(--accent-color);
-    font-weight: 600;
+    background: transparent;
 }
 
 
@@ -360,7 +371,7 @@ button:focus,
 }
 
 .values-header p {
-    color: var(--text-muted);
+    color: var(--text-color);
 }
 
 .values-list {
@@ -549,7 +560,7 @@ button:focus,
 
 .profile-role {
     font-size: 1rem;
-    color: var(--text-muted);
+    color: var(--text-color);
     margin-bottom: 20px;
 }
 
@@ -585,7 +596,7 @@ button:focus,
 .student-name .degree {
     font-weight: 400;
     font-size: 0.85rem;
-    color: var(--text-faint);
+    color: var(--text-color);
     margin-left: 5px;
 }
 
@@ -826,6 +837,7 @@ footer {
         text-align: center;
         font-size: 0.85rem;
         width: 100%;
+        background: transparent;
     }
 
     /* Dropdown menu - full width on mobile */
