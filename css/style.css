@@ -10,7 +10,7 @@
 
     /* Text Colors */
     --text-color: #333333;         /* Main body text */
-    --text-light: #555555;         /* Secondary text */
+    /* --text-light: #555555;         /* Secondary text */
     --text-muted: #777777;         /* De-emphasized text (roles, metadata) */
     --text-faint: #888888;         /* Very subtle text (degree labels) */
 
@@ -109,7 +109,7 @@ section {
 /* Intro paragraph text styling */
 #intro p {
     font-size: 1.25rem;
-    color: var(--text-light);
+    color: var(--text-color);
     max-width: 800px;
     margin: 0 auto;
 }
@@ -473,7 +473,7 @@ button:focus,
 .news-badge {
     display: inline-block;
     background-color: var(--border-light);
-    color: var(--text-light);
+    color: var(--text-color);
     font-size: 0.75rem;
     padding: 2px 8px;
     border-radius: 4px;
@@ -505,7 +505,7 @@ button:focus,
 /* Section headers (e.g., "Faculty", "Current Students") */
 .people-header {
     font-size: 1.5rem;
-    color: var(--text-light);
+    color: var(--text-color);
     border-bottom: 1px solid var(--border-medium);
     padding-bottom: 10px;
     margin-bottom: 40px;
@@ -649,7 +649,7 @@ button:focus,
 /* Conference/venue information */
 .pub-venue {
     font-size: 0.9rem;
-    color: var(--text-light);
+    color: var(--text-color);
     font-style: italic;
 }
 
