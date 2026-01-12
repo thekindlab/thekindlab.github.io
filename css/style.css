@@ -734,6 +734,8 @@ footer {
 }
 
 /* Footer column headings */
+.footer-col h2,
+.footer-col h3,
 .footer-col h4 {
     color: #fff;
     font-size: 1.1rem;
@@ -940,6 +942,8 @@ footer {
         min-width: 100%;
     }
 
+    .footer-col h2,
+    .footer-col h3,
     .footer-col h4 {
         margin-left: auto;
         margin-right: auto;
