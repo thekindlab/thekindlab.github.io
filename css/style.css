@@ -613,7 +613,7 @@ button:focus,
 /* Year divider headers */
 .year-heading {
     font-size: 2rem;
-    color: var(--border-medium);
+    color: var(--text-color);
     border-bottom: 2px solid var(--border-light);
     margin-top: 60px;
     margin-bottom: 20px;
