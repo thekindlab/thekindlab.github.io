@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>KIND Lab</title>
+    <link rel="icon" type="image/png" href="images/kindLogos/favicon_32x32.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header>
+        <div class="branding">
+            <a href="index.html" class="logo-link">
+                <img src="images/kindLogos/KIND_SYMBOL-tiny-transparent-.png" alt="" class="logo-img">
+                <span class="logo-text">The KIND Lab</span>
+            </a>
+        </div>
+    </header>
+
+    <main id="main-content" tabindex="-1">
+        <section id="intro">
+            <div class="container">
+                <h1 class="section-title">You and I</h1>
+                <p>Produced by KIND Lab, "You and I" is a educational mobile game designed with care for gestalt language learners.</p>
+            </div>
+        </section>
+
+        <section id="mission-vision">
+            <div class="container">
+                <div class="mv-card">
+                    <h2>About the Game</h2>
+                    <p>You and I follows the child through everyday activities, like getting ready for school, or playing with friends. It reinforces skills that gestalt language learners may struggle with, like pronoun reversal. Attention to detail is put in every level to ensure the game is not only useful and educational, but engaging for the child.</p>
+                </div>
+            </div>
+        </section>
+
+       <section id="values">
+            <div class="container">
+                <div class="values-header">
+                    <h2>Contact Us</h2>
+                    <p>Interested in participating, or know someone who might be?</p>
+                </div>
+
+                <div class="values-list">
+                    <div class="value-row">
+                        <div class="value-visual">
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeeNY0OuGuIZ03umeLKqzEnOFxo3G6-PWcaqZkM4FdQKTQdTw/viewform?usp=sharing&ouid=104498232883320047390"><img src="images/youAndI/googleFormsLogo.png" alt="Google Forms Logo" id="contactImg"></a>
+                        </div>
+                        <div class="value-content">
+                            <h3>Google Forms</h3>
+                            <p>Fill out this google form to express interest in the study!</p>
+                        </div>
+                    </div>
+
+                    <div class="value-row">
+                        <div class="value-visual">
+                            <a href="mailto:critchr@wwu.edu?subject=You And I"><img src="images/youAndI/outlookLogo.png" alt="Outlook Email Logo" id="contactImg"></a>
+                        </div>
+                        <div class="value-content">
+                            <h3>Reach out through email</h3>
+                            <p>Want more information? Reach out to us through email and we'll answer any questions you have.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>The Kind Lab</h4>
+                    <p>
+                        <strong>Komputing for INclusion & Disability</strong><br>
+                        Building accessible futures through research, design, and education.
+                    </p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Find Us</h4>
+                    <p>
+                        <strong>Kaiser Borsari Hall 421</strong><br>
+                        (CS Department Main Office)<br>
+                        Western Washington University<br>
+                        516 High Street<br>
+                        Bellingham, WA 98225
+                    </p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Affiliations</h4>
+                    <div class="footer-links">
+                        <a href="https://cs.wwu.edu" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-university" aria-hidden="true"></i>
+                            WWU Computer Science
+                            <span class="sr-only">(opens in new tab)</span>
+                        </a>
+                        <a href="https://www.wwu.edu" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                            Western Washington University
+                            <span class="sr-only">(opens in new tab)</span>
+                        </a>
+                        <a href="https://github.com/thekindlab" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github" aria-hidden="true"></i>
+                            Kind Lab GitHub
+                            <span class="sr-only">(opens in new tab)</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>
+                &copy; 2025 The KIND Lab. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+    // Skip link handler - ensures proper behavior across all environments
+    document.addEventListener('DOMContentLoaded', function() {
+        const skipLink = document.querySelector('.skip-link');
+        if (skipLink) {
+            skipLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.focus();
+                    target.scrollIntoView();
+                }
+            });
+        }
+
+        // Accessible dropdown menu handling
+        const dropdowns = document.querySelectorAll('.dropdown');
+
+        dropdowns.forEach(function(dropdown) {
+            const toggle = dropdown.querySelector('.dropdown-toggle');
+            const menu = dropdown.querySelector('.dropdown-menu');
+            const menuItems = menu.querySelectorAll('[role="menuitem"]');
+
+            function openMenu() {
+                toggle.setAttribute('aria-expanded', 'true');
+                if (menuItems.length > 0) {
+                    menuItems[0].focus();
+                }
+            }
+
+            function closeMenu() {
+                toggle.setAttribute('aria-expanded', 'false');
+                toggle.focus();
+            }
+
+            // Toggle on click - open and focus first item
+            toggle.addEventListener('click', function() {
+                const expanded = toggle.getAttribute('aria-expanded') === 'true';
+                if (expanded) {
+                    closeMenu();
+                } else {
+                    openMenu();
+                }
+            });
+
+            // Keyboard navigation on toggle button
+            toggle.addEventListener('keydown', function(e) {
+                if (e.key === 'ArrowDown' || e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    openMenu();
+                }
+            });
+
+            // Update aria-expanded on mouse enter/leave
+            dropdown.addEventListener('mouseenter', function() {
+                toggle.setAttribute('aria-expanded', 'true');
+            });
+
+            dropdown.addEventListener('mouseleave', function() {
+                toggle.setAttribute('aria-expanded', 'false');
+            });
+
+            // Keyboard navigation within menu
+            menu.addEventListener('keydown', function(e) {
+                const currentIndex = Array.from(menuItems).indexOf(document.activeElement);
+
+                switch(e.key) {
+                    case 'ArrowDown':
+                        e.preventDefault();
+                        const nextIndex = (currentIndex + 1) % menuItems.length;
+                        menuItems[nextIndex].focus();
+                        break;
+                    case 'ArrowUp':
+                        e.preventDefault();
+                        const prevIndex = (currentIndex - 1 + menuItems.length) % menuItems.length;
+                        menuItems[prevIndex].focus();
+                        break;
+                    case 'Home':
+                        e.preventDefault();
+                        menuItems[0].focus();
+                        break;
+                    case 'End':
+                        e.preventDefault();
+                        menuItems[menuItems.length - 1].focus();
+                        break;
+                    case 'Escape':
+                        closeMenu();
+                        break;
+                    case 'Tab':
+                        toggle.setAttribute('aria-expanded', 'false');
+                        break;
+                }
+            });
+        });
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', function(e) {
+            dropdowns.forEach(function(dropdown) {
+                if (!dropdown.contains(e.target)) {
+                    dropdown.querySelector('.dropdown-toggle').setAttribute('aria-expanded', 'false');
+                }
+            });
+        });
+    });
+    </script>
+</body>
+</html>
